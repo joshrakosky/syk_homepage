@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stryker | Branded Solutions</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<!--
+  Static developer example. Open index.html in a browser.
+
+  Placeholder links (href="#"). Suggested live routes:
+  Apparel & Uniforms /apparel
+  Headwear /headwear
+  Bags & Coolers /bags-coolers
+  Premium Brands /premium-brands
+  Marketing & Promo /marketing
+  Print Center /print-center
+  Trade Shows /trade-shows
+  Quick Turn /quick-turn
+  About Us /about
+  Footer links follow the same pattern.
+
+  Photos in assets/images are stand-ins. Swap in brand photography
+  without changing the markup. Logo: assets/logo/stryker-logo.png.
+  Fonts: see the @font-face note in css/styles.css.
+-->
+<body>
+  <!-- Inline icon set. Color comes from currentColor in CSS. -->
+  <svg class="sprite" aria-hidden="true">
+    <symbol id="i-search" viewBox="0 0 24 24">
+      <circle cx="10.5" cy="10.5" r="6.25" fill="none" stroke="currentColor" stroke-width="2"/>
+      <path d="M15.2 15.2L20.5 20.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="i-user" viewBox="0 0 24 24">
+      <circle cx="12" cy="8" r="3.2" fill="none" stroke="currentColor" stroke-width="1.8"/>
+      <path d="M5 19.4c1.3-3.1 3.7-4.6 7-4.6s5.7 1.5 7 4.6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="i-cart" viewBox="0 0 24 24">
+      <path d="M4 5h2.2l1.6 9.2h9.7l1.8-6.2H8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>
+      <circle cx="10" cy="18.2" r="1.35" fill="currentColor"/>
+      <circle cx="16.2" cy="18.2" r="1.35" fill="currentColor"/>
+    </symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24">
+      <path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="i-chevron-down" viewBox="0 0 24 24">
+      <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="i-hanger" viewBox="0 0 24 24">
+      <circle cx="12" cy="5" r="1.8" fill="none" stroke="currentColor" stroke-width="1.7"/>
+      <path d="M12 6.8v2.1M12 8.9L4.2 17.4h15.6L12 8.9z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="i-gift" viewBox="0 0 24 24">
+      <rect x="3" y="10" width="18" height="10" rx="1" fill="none" stroke="currentColor" stroke-width="1.7"/>
+      <path d="M3 14.5h18M12 10v10" stroke="currentColor" stroke-width="1.7"/>
+      <path d="M12 10c-1.8 0-3.6-.8-3.6-2.6S10 4.6 12 7.2C14 4.6 15.6 4.8 15.6 7.4S13.8 10 12 10z" fill="none" stroke="currentColor" stroke-width="1.7"/>
+    </symbol>
+    <symbol id="i-doc" viewBox="0 0 24 24">
+      <path d="M7 3h7l5 5v13H7z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+      <path d="M14 3v5h5M9.5 13h6M9.5 16.5h6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24">
+      <rect x="3.5" y="5" width="17" height="15.5" rx="2" fill="none" stroke="currentColor" stroke-width="1.7"/>
+      <path d="M3.5 10h17M8 3.2v4M16 3.2v4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="i-star" viewBox="0 0 24 24">
+      <path d="M12 3.4l2.3 4.8 5.3.7-3.9 3.7.9 5.3L12 15.6 7.4 17.9l.9-5.3L4.4 8.9l5.3-.7L12 3.4z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="i-bolt" viewBox="0 0 24 24">
+      <path d="M13 2.2L4.8 13.6h6.2l-.8 8.2 8.8-12.2h-6.2l.2-7.4z" fill="currentColor"/>
+    </symbol>
+    <symbol id="i-trophy" viewBox="0 0 24 24">
+      <path d="M8 4h8v5.5a4 4 0 01-8 0V4z" fill="none" stroke="currentColor" stroke-width="1.7"/>
+      <path d="M8 6.2H5.6A2.4 2.4 0 008 9.2M16 6.2h2.4A2.4 2.4 0 0116 9.2M12 13.6V17M9 20h6M10 17h4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="i-bulb" viewBox="0 0 24 24">
+      <path d="M9 16.5h6M10 19.2h4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+      <path d="M8.2 13.6a4.6 4.6 0 117.6 0c0 1.5-.9 2.2-1.5 2.8-.3.3-.3.6-.3.8h-4c0-.2 0-.5-.3-.8-.6-.6-1.5-1.3-1.5-2.8z" fill="none" stroke="currentColor" stroke-width="1.7"/>
+    </symbol>
+    <symbol id="i-box" viewBox="0 0 24 24">
+      <path d="M3.6 8.1L12 4.6l8.4 3.5v9.3L12 21l-8.4-3.6z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+      <path d="M12 12.1V21M3.6 8.1L12 12.1l8.4-4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="i-cog" viewBox="0 0 24 24">
+      <path d="M10 3.5h4l.6 2.2c.5.2 1 .5 1.5.8l2.1-.8 2 3.4-1.5 1.6c.1.5.1 1 0 1.5l1.5 1.6-2 3.4-2.1-.8c-.5.3-1 .6-1.5.8L14 20.5h-4l-.6-2.2c-.5-.2-1-.5-1.5-.8l-2.1.8-2-3.4 1.5-1.6a4.8 4.8 0 010-1.5L3.8 8.1l2-3.4 2.1.8c.5-.3 1-.6 1.5-.8L10 3.5z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+      <circle cx="12" cy="12" r="2.2" fill="none" stroke="currentColor" stroke-width="1.5"/>
+    </symbol>
+    <symbol id="i-bag" viewBox="0 0 24 24">
+      <path d="M6.2 8.4h11.6L16.8 20H7.2L6.2 8.4z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+      <path d="M9 8.4V6.7a3 3 0 016 0v1.7" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="i-pen" viewBox="0 0 24 24">
+      <path d="M14.2 4.2l5.6 5.6L8.5 21.1H4.2v-4.3L14.2 4.2z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+      <path d="M12.2 6.2l5.6 5.6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+    </symbol>
+  </svg>
+
+  <!-- Logos live in assets/images/logos. The track is duplicated so the loop is seamless. -->
+  <section class="brand-ticker" aria-label="Brands we offer">
+    <div class="brand-ticker__track">
+      <ul class="brand-ticker__list">
+        <li><img src="assets/images/logos/Adidas.png" alt="Adidas"></li>
+        <li><img src="assets/images/logos/AheadLLC.png" alt="Ahead LLC"></li>
+        <li><img src="assets/images/logos/AmericanApparel.png" alt="American Apparel"></li>
+        <li><img src="assets/images/logos/Anker.png" alt="Anker"></li>
+        <li><img src="assets/images/logos/Beekman1802.png" alt="Beekman1802"></li>
+        <li><img src="assets/images/logos/Bluetees.png" alt="Bluetees"></li>
+        <li><img src="assets/images/logos/Bose.png" alt="Bose"></li>
+        <li><img src="assets/images/logos/BridgestoneGolf.png" alt="Bridgestone Golf"></li>
+        <li><img src="assets/images/logos/BrooksBrothers.png" alt="Brooks Brothers"></li>
+        <li><img src="assets/images/logos/CaddySplash.png" alt="Caddy Splash"></li>
+        <li><img src="assets/images/logos/Camelbak.png" alt="Camelbak"></li>
+        <li><img src="assets/images/logos/Carhartt.png" alt="Carhartt"></li>
+        <li><img src="assets/images/logos/CaseLogic.png" alt="Case Logic"></li>
+        <li><img src="assets/images/logos/Corkcicle.png" alt="Corkcicle"></li>
+        <li><img src="assets/images/logos/Cotopaxi.png" alt="Cotopaxi"></li>
+        <li><img src="assets/images/logos/Cuisinart.png" alt="Cuisinart"></li>
+        <li><img src="assets/images/logos/CutterBuck.png" alt="Cutter Buck"></li>
+        <li><img src="assets/images/logos/EddieBauer.png" alt="Eddie Bauer"></li>
+        <li><img src="assets/images/logos/FootJoy.png" alt="Foot Joy"></li>
+        <li><img src="assets/images/logos/HighSierra.png" alt="High Sierra"></li>
+        <li><img src="assets/images/logos/HydroFlask.png" alt="Hydro Flask"></li>
+        <li><img src="assets/images/logos/Igloo.png" alt="Igloo"></li>
+        <li><img src="assets/images/logos/JaAnuu.png" alt="Ja Anuu"></li>
+        <li><img src="assets/images/logos/JanSport.png" alt="Jan Sport"></li>
+        <li><img src="assets/images/logos/KleanKanteen.png" alt="Klean Kanteen"></li>
+        <li><img src="assets/images/logos/Legends.png" alt="Legends"></li>
+        <li><img src="assets/images/logos/Leuchtturm1917.png" alt="Leuchtturm1917"></li>
+        <li><img src="assets/images/logos/LondonFog.png" alt="London Fog"></li>
+        <li><img src="assets/images/logos/Marmot.png" alt="Marmot"></li>
+        <li><img src="assets/images/logos/MiiR.png" alt="Mii R"></li>
+        <li><img src="assets/images/logos/Moleskine.png" alt="Moleskine"></li>
+        <li><img src="assets/images/logos/NewBalance.png" alt="New Balance"></li>
+        <li><img src="assets/images/logos/NewEra.png" alt="New Era"></li>
+        <li><img src="assets/images/logos/Nike.png" alt="Nike"></li>
+        <li><img src="assets/images/logos/Osprey.png" alt="Osprey"></li>
+        <li><img src="assets/images/logos/Samsonite.png" alt="Samsonite"></li>
+        <li><img src="assets/images/logos/Soapbox.png" alt="Soapbox"></li>
+        <li><img src="assets/images/logos/Sony.png" alt="Sony"></li>
+        <li><img src="assets/images/logos/Srixon.png" alt="Srixon"></li>
+        <li><img src="assets/images/logos/Stanley.png" alt="Stanley"></li>
+        <li><img src="assets/images/logos/Stitch.png" alt="Stitch"></li>
+        <li><img src="assets/images/logos/Thule.png" alt="Thule"></li>
+        <li><img src="assets/images/logos/Titleist.png" alt="Titleist"></li>
+        <li><img src="assets/images/logos/TNF.png" alt="TNF"></li>
+        <li><img src="assets/images/logos/TravisMathew.png" alt="Travis Mathew"></li>
+        <li><img src="assets/images/logos/UnderArmour.png" alt="Under Armour"></li>
+        <li><img src="assets/images/logos/VineyardVines.png" alt="Vineyard Vines"></li>
+        <li><img src="assets/images/logos/w&amp;p.png" alt="w & p"></li>
+        <li><img src="assets/images/logos/Welly.png" alt="Welly"></li>
+      </ul>
+      <ul class="brand-ticker__list" aria-hidden="true">
+        <li><img src="assets/images/logos/Adidas.png" alt="Adidas"></li>
+        <li><img src="assets/images/logos/AheadLLC.png" alt="Ahead LLC"></li>
+        <li><img src="assets/images/logos/AmericanApparel.png" alt="American Apparel"></li>
+        <li><img src="assets/images/logos/Anker.png" alt="Anker"></li>
+        <li><img src="assets/images/logos/Beekman1802.png" alt="Beekman1802"></li>
+        <li><img src="assets/images/logos/Bluetees.png" alt="Bluetees"></li>
+        <li><img src="assets/images/logos/Bose.png" alt="Bose"></li>
+        <li><img src="assets/images/logos/BridgestoneGolf.png" alt="Bridgestone Golf"></li>
+        <li><img src="assets/images/logos/BrooksBrothers.png" alt="Brooks Brothers"></li>
+        <li><img src="assets/images/logos/CaddySplash.png" alt="Caddy Splash"></li>
+        <li><img src="assets/images/logos/Camelbak.png" alt="Camelbak"></li>
+        <li><img src="assets/images/logos/Carhartt.png" alt="Carhartt"></li>
+        <li><img src="assets/images/logos/CaseLogic.png" alt="Case Logic"></li>
+        <li><img src="assets/images/logos/Corkcicle.png" alt="Corkcicle"></li>
+        <li><img src="assets/images/logos/Cotopaxi.png" alt="Cotopaxi"></li>
+        <li><img src="assets/images/logos/Cuisinart.png" alt="Cuisinart"></li>
+        <li><img src="assets/images/logos/CutterBuck.png" alt="Cutter Buck"></li>
+        <li><img src="assets/images/logos/EddieBauer.png" alt="Eddie Bauer"></li>
+        <li><img src="assets/images/logos/FootJoy.png" alt="Foot Joy"></li>
+        <li><img src="assets/images/logos/HighSierra.png" alt="High Sierra"></li>
+        <li><img src="assets/images/logos/HydroFlask.png" alt="Hydro Flask"></li>
+        <li><img src="assets/images/logos/Igloo.png" alt="Igloo"></li>
+        <li><img src="assets/images/logos/JaAnuu.png" alt="Ja Anuu"></li>
+        <li><img src="assets/images/logos/JanSport.png" alt="Jan Sport"></li>
+        <li><img src="assets/images/logos/KleanKanteen.png" alt="Klean Kanteen"></li>
+        <li><img src="assets/images/logos/Legends.png" alt="Legends"></li>
+        <li><img src="assets/images/logos/Leuchtturm1917.png" alt="Leuchtturm1917"></li>
+        <li><img src="assets/images/logos/LondonFog.png" alt="London Fog"></li>
+        <li><img src="assets/images/logos/Marmot.png" alt="Marmot"></li>
+        <li><img src="assets/images/logos/MiiR.png" alt="Mii R"></li>
+        <li><img src="assets/images/logos/Moleskine.png" alt="Moleskine"></li>
+        <li><img src="assets/images/logos/NewBalance.png" alt="New Balance"></li>
+        <li><img src="assets/images/logos/NewEra.png" alt="New Era"></li>
+        <li><img src="assets/images/logos/Nike.png" alt="Nike"></li>
+        <li><img src="assets/images/logos/Osprey.png" alt="Osprey"></li>
+        <li><img src="assets/images/logos/Samsonite.png" alt="Samsonite"></li>
+        <li><img src="assets/images/logos/Soapbox.png" alt="Soapbox"></li>
+        <li><img src="assets/images/logos/Sony.png" alt="Sony"></li>
+        <li><img src="assets/images/logos/Srixon.png" alt="Srixon"></li>
+        <li><img src="assets/images/logos/Stanley.png" alt="Stanley"></li>
+        <li><img src="assets/images/logos/Stitch.png" alt="Stitch"></li>
+        <li><img src="assets/images/logos/Thule.png" alt="Thule"></li>
+        <li><img src="assets/images/logos/Titleist.png" alt="Titleist"></li>
+        <li><img src="assets/images/logos/TNF.png" alt="TNF"></li>
+        <li><img src="assets/images/logos/TravisMathew.png" alt="Travis Mathew"></li>
+        <li><img src="assets/images/logos/UnderArmour.png" alt="Under Armour"></li>
+        <li><img src="assets/images/logos/VineyardVines.png" alt="Vineyard Vines"></li>
+        <li><img src="assets/images/logos/w&amp;p.png" alt="w & p"></li>
+        <li><img src="assets/images/logos/Welly.png" alt="Welly"></li>
+      </ul>
+    </div>
+  </section>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="logo" href="#">
+        <!-- Transparent wordmark, cropped to the lettering. Swap this file to update the logo. -->
+        <img src="assets/logo/stryker-logo.png" alt="Stryker">
+      </a>
+
+      <!-- Wire action to the catalog search endpoint. -->
+      <form class="search" role="search" action="#" method="get">
+        <label class="visually-hidden" for="site-search">Search the site</label>
+        <input id="site-search" type="search" name="q" placeholder="Search the site." autocomplete="off">
+        <button type="submit" aria-label="Search">
+          <svg class="icon"><use href="#i-search"></use></svg>
+        </button>
+      </form>
+
+      <div class="header-tools">
+        <!-- Account menu is not part of this example. -->
+        <a href="#">
+          <svg class="icon" aria-hidden="true"><use href="#i-user"></use></svg>
+          My Account
+          <svg class="icon icon-chevron" aria-hidden="true"><use href="#i-chevron-down"></use></svg>
+        </a>
+        <a href="#">
+          <svg class="icon" aria-hidden="true"><use href="#i-cart"></use></svg>
+          Cart
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <nav class="site-nav" aria-label="Primary">
+    <div class="wrap">
+      <ul class="nav-list">
+        <li class="has-menu">
+          <a href="#" aria-haspopup="true">Apparel &amp; Uniforms <svg class="icon icon-chevron" aria-hidden="true"><use href="#i-chevron-down"></use></svg></a>
+          <!-- Hover opens this panel. Men's, Women's, and By Look fly out to the right. -->
+          <ul class="menu">
+            <li class="has-flyout">
+              <a href="#" aria-haspopup="true">Men's <svg class="icon" aria-hidden="true"><use href="#i-chevron"></use></svg></a>
+              <ul class="flyout">
+                <li><a href="#">Polos</a></li>
+                <li><a href="#">Casual</a></li>
+                <li><a href="#">Pullovers</a></li>
+                <li><a href="#">Dress Shirts</a></li>
+                <li><a href="#">Outerwear</a></li>
+              </ul>
+            </li>
+            <li class="has-flyout">
+              <a href="#" aria-haspopup="true">Women's <svg class="icon" aria-hidden="true"><use href="#i-chevron"></use></svg></a>
+              <ul class="flyout">
+                <li><a href="#">Polos</a></li>
+                <li><a href="#">Casual</a></li>
+                <li><a href="#">Pullovers</a></li>
+                <li><a href="#">Dress Shirts</a></li>
+                <li><a href="#">Outerwear</a></li>
+              </ul>
+            </li>
+            <li class="has-flyout">
+              <a href="#" aria-haspopup="true">By Look <svg class="icon" aria-hidden="true"><use href="#i-chevron"></use></svg></a>
+              <ul class="flyout">
+                <li><a href="#">Healthcare</a></li>
+                <li><a href="#">Comp</a></li>
+                <li><a href="#">Conference</a></li>
+                <li><a href="#">Sales</a></li>
+                <li><a href="#">Meeting</a></li>
+                <li><a href="#">Team</a></li>
+                <li><a href="#">Travel</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#">Headwear</a></li>
+        <li><a href="#">Bags &amp; Coolers</a></li>
+        <li><a href="#">Premium Brands</a></li>
+        <li><a href="#">Marketing &amp; Promo</a></li>
+        <li><a href="#">Print Center</a></li>
+        <li><a href="#">Trade Shows</a></li>
+        <li><a href="#">Quick Turn</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <!-- Production hero should include the illuminated building sign. This stand-in leaves that band blank. -->
+      <img class="hero__photo" src="assets/images/hero.jpg" alt="Glass headquarters building at dusk">
+      <div class="hero__shade" aria-hidden="true"></div>
+      <div class="wrap hero__content">
+        <h1>Branded<br><span>Solutions</span></h1>
+        <p>People. Innovation. Impact.</p>
+        <button type="button" class="btn" id="open-about">About Us <svg class="icon" aria-hidden="true"><use href="#i-chevron"></use></svg></button>
+      </div>
+    </section>
+
+    <div class="wrap page-body">
+      <!-- Category tiles. Hover enlarges the whole card. Photos: assets/images/categories/ -->
+      <section aria-label="Shop by category">
+        <div class="category-grid">
+          <a class="category-card" href="#">
+            <div class="category-card__photo">
+              <img src="assets/images/categories/apparel.jpg" alt="Charcoal and black polo shirts">
+            </div>
+            <span class="category-card__label">Apparel &amp; Uniforms <svg class="icon" aria-hidden="true"><use href="#i-chevron"></use></svg></span>
+          </a>
+
+          <a class="category-card" href="#">
+            <div class="category-card__photo">
+              <img src="assets/images/categories/headwear.jpg" alt="Black and charcoal caps and a beanie">
+            </div>
+            <span class="category-card__label">Headwear <svg class="icon" aria-hidden="true"><use href="#i-chevron"></use></svg></span>
+          </a>
+
+          <a class="category-card" href="#">
+            <div class="category-card__photo">
+              <img src="assets/images/categories/bags-coolers.jpg" alt="Backpack, cooler, and tote">
+            </div>
+            <span class="category-card__label">Bags &amp; Coolers <svg class="icon" aria-hidden="true"><use href="#i-chevron"></use></svg></span>
+          </a>
+
+          <a class="category-card" href="#">
+            <div class="category-card__photo">
+              <img src="assets/images/categories/premium-brands.jpg" alt="Jacket, metal tumbler, and leather notebook">
+            </div>
+            <span class="category-card__label">Premium Brands <svg class="icon" aria-hidden="true"><use href="#i-chevron"></use></svg></span>
+          </a>
+
+          <a class="category-card" href="#">
+            <div class="category-card__photo">
+              <img src="assets/images/categories/marketing.jpg" alt="Black tumbler, backpack, and gift boxes">
+            </div>
+            <span class="category-card__label">Marketing &amp; Promo <svg class="icon" aria-hidden="true"><use href="#i-chevron"></use></svg></span>
+          </a>
+
+          <a class="category-card" href="#">
+            <div class="category-card__photo">
+              <img src="assets/images/categories/print.jpg" alt="Black and gold presentation folders">
+            </div>
+            <span class="category-card__label">Print Center <svg class="icon" aria-hidden="true"><use href="#i-chevron"></use></svg></span>
+          </a>
+
+          <a class="category-card" href="#">
+            <div class="category-card__photo">
+              <img src="assets/images/categories/trade-shows.jpg" alt="Retractable banners and a backdrop banner">
+            </div>
+            <span class="category-card__label">Trade Shows <svg class="icon" aria-hidden="true"><use href="#i-chevron"></use></svg></span>
+          </a>
+
+          <a class="category-card" href="#">
+            <div class="category-card__photo">
+              <img src="assets/images/categories/quick-turn.jpg" alt="Notebook, water bottle, and folded shirt">
+            </div>
+            <span class="category-card__label">Quick Turn <svg class="icon" aria-hidden="true"><use href="#i-chevron"></use></svg></span>
+          </a>
+        </div>
+      </section>
+
+      <section class="service-bar" aria-labelledby="service-title">
+        <h2 id="service-title">Need something different?</h2>
+        <span class="service-bar__rule" aria-hidden="true"></span>
+        <div class="service-bar__items">
+          <div class="service">
+            <svg class="icon" aria-hidden="true"><use href="#i-box"></use></svg>
+            <span>Ordering &amp;<br>Fulfillment</span>
+          </div>
+          <span class="service-bar__rule" aria-hidden="true"></span>
+          <div class="service">
+            <svg class="icon" aria-hidden="true"><use href="#i-cog"></use></svg>
+            <span>Inventory<br>Management</span>
+          </div>
+          <span class="service-bar__rule" aria-hidden="true"></span>
+          <div class="service">
+            <svg class="icon" aria-hidden="true"><use href="#i-bag"></use></svg>
+            <span>E-commerce<br>Solutions</span>
+          </div>
+          <span class="service-bar__rule" aria-hidden="true"></span>
+          <div class="service">
+            <svg class="icon" aria-hidden="true"><use href="#i-pen"></use></svg>
+            <span>Art &amp;<br>Graphics</span>
+          </div>
+        </div>
+        <span class="service-bar__rule" aria-hidden="true"></span>
+        <button type="button" class="btn btn--outline" id="open-project">Start a Custom Project <svg class="icon" aria-hidden="true"><use href="#i-chevron"></use></svg></button>
+      </section>
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <ul class="footer-nav">
+      <li><a href="#">Product Database</a></li>
+      <li><a href="#" data-about="faqs">FAQs</a></li>
+      <li><a href="#" data-about="contact">Contact Us</a></li>
+      <li><a href="#" data-about="shipping">Shipping Information</a></li>
+      <li><a href="#" data-about="policy">Return Policy</a></li>
+      <li><a href="#">Brands We Offer</a></li>
+    </ul>
+    <hr class="footer-rule">
+    <div class="fine-print">
+      <p>&copy; 2026 Stryker. All rights reserved. | Powered by <a href="#">Proforma ProStores</a></p>
+      <p>Stryker adheres to AdvaMed's Code of Ethics and our HCPI guidance for employees.</p>
+      <p>Promotional items may not be purchased and provided to our customers or potential customers.</p>
+    </div>
+  </footer>
+
+  <!-- Custom project request. Opened from the service bar. Submit closes the dialog after the fields validate. -->
+  <dialog class="modal" id="custom-project" aria-labelledby="project-title">
+    <form class="modal__panel" method="dialog">
+      <div class="modal__head">
+        <h2 id="project-title">Start a Custom Project</h2>
+        <button type="button" class="modal__close" data-close aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <p class="modal__lead">Tell us who to reach and what you need in hand.</p>
+
+      <div class="modal__grid">
+        <label>Full name
+          <input type="text" name="name" autocomplete="name" required>
+        </label>
+        <label>Email
+          <input type="email" name="email" autocomplete="email" required>
+        </label>
+        <label>Phone
+          <input type="tel" name="phone" autocomplete="tel">
+        </label>
+        <label>Department
+          <input type="text" name="department" autocomplete="organization">
+        </label>
+      </div>
+
+      <label>Scope of work
+        <textarea name="scope" rows="5" required placeholder="Quantities, products, branding, and anything the team should know."></textarea>
+      </label>
+      <label>In-hands date
+        <input type="date" name="in-hands" required>
+      </label>
+
+      <div class="modal__actions">
+        <button type="button" class="btn btn--ghost" data-close>Cancel</button>
+        <button type="submit" class="btn" value="submit">Submit request</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- About Us. Example copy for the layout. The same dialog opens from the hero and the matching footer links. -->
+  <dialog class="modal modal--about" id="about" aria-labelledby="about-title">
+    <div class="modal__panel">
+      <div class="modal__head">
+        <h2 id="about-title">About Us</h2>
+        <button type="button" class="modal__close" data-close-about aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="about-tabs" role="tablist" aria-label="About Stryker">
+        <button type="button" role="tab" id="tab-history" data-about-tab="history" aria-controls="panel-history" aria-selected="true">History</button>
+        <button type="button" role="tab" id="tab-capabilities" data-about-tab="capabilities" aria-controls="panel-capabilities" aria-selected="false" tabindex="-1">Capabilities</button>
+        <button type="button" role="tab" id="tab-contact" data-about-tab="contact" aria-controls="panel-contact" aria-selected="false" tabindex="-1">Contact</button>
+        <button type="button" role="tab" id="tab-terms" data-about-tab="terms" aria-controls="panel-terms" aria-selected="false" tabindex="-1">Terms</button>
+        <button type="button" role="tab" id="tab-policy" data-about-tab="policy" aria-controls="panel-policy" aria-selected="false" tabindex="-1">Policy</button>
+        <button type="button" role="tab" id="tab-shipping" data-about-tab="shipping" aria-controls="panel-shipping" aria-selected="false" tabindex="-1">Shipping</button>
+        <button type="button" role="tab" id="tab-faqs" data-about-tab="faqs" aria-controls="panel-faqs" aria-selected="false" tabindex="-1">FAQs</button>
+      </div>
+
+      <div class="about-panel" id="panel-history" role="tabpanel" data-about-panel="history" aria-labelledby="tab-history">
+        <h3>History</h3>
+        <p>Stryker Branded Solutions is the store for approved branded apparel, print, and promotional goods. People. Innovation. Impact.</p>
+        <p>This history is example copy for the layout. Replace it with the approved story.</p>
+      </div>
+      <div class="about-panel" id="panel-capabilities" role="tabpanel" data-about-panel="capabilities" aria-labelledby="tab-capabilities" hidden>
+        <h3>Capabilities</h3>
+        <ul>
+          <li>Ordering and fulfillment for kits, apparel, and print.</li>
+          <li>Inventory management for programs that stay in stock.</li>
+          <li>E-commerce solutions for the storefront and checkout.</li>
+          <li>Art and graphics for branding and production files.</li>
+        </ul>
+      </div>
+      <div class="about-panel" id="panel-contact" role="tabpanel" data-about-panel="contact" aria-labelledby="tab-contact" hidden>
+        <h3>Contact</h3>
+        <p>Add the store phone number and email here.</p>
+        <p>For a scoped request, use Start a Custom Project and include an in-hands date.</p>
+      </div>
+      <div class="about-panel" id="panel-terms" role="tabpanel" data-about-panel="terms" aria-labelledby="tab-terms" hidden>
+        <h3>Terms</h3>
+        <p>Stryker adheres to AdvaMed's Code of Ethics and our HCPI guidance for employees.</p>
+        <p>Promotional items may not be purchased and provided to our customers or potential customers.</p>
+        <p>Replace this panel with the approved terms.</p>
+      </div>
+      <div class="about-panel" id="panel-policy" role="tabpanel" data-about-panel="policy" aria-labelledby="tab-policy" hidden>
+        <h3>Return policy</h3>
+        <p>Add the return window, what can be returned, and how to start a return.</p>
+        <p>This panel is example copy for the layout.</p>
+      </div>
+      <div class="about-panel" id="panel-shipping" role="tabpanel" data-about-panel="shipping" aria-labelledby="tab-shipping" hidden>
+        <h3>Shipping information</h3>
+        <p>Add carriers, delivery timing, and where orders can ship.</p>
+        <p>This panel is example copy for the layout.</p>
+      </div>
+      <div class="about-panel" id="panel-faqs" role="tabpanel" data-about-panel="faqs" aria-labelledby="tab-faqs" hidden>
+        <h3>FAQs</h3>
+        <p>How do I start a project? Use Start a Custom Project and describe the scope of work.</p>
+        <p>What is an in-hands date? The day the items need to arrive, not the day they ship.</p>
+        <p>Replace these questions with the approved FAQ.</p>
+      </div>
+    </div>
+  </dialog>
+
+  <script>
+    // The button opens the native dialog. Cancel and the corner control close it without submitting.
+    const projectDialog = document.getElementById("custom-project");
+    document.getElementById("open-project").addEventListener("click", function () {
+      projectDialog.querySelector("form").reset();
+      projectDialog.showModal();
+    });
+    projectDialog.querySelectorAll("[data-close]").forEach(function (button) {
+      button.addEventListener("click", function () {
+        projectDialog.close();
+      });
+    });
+
+    // About Us and the matching footer links open this dialog on the requested tab.
+    const aboutDialog = document.getElementById("about");
+    function showAbout(tabId) {
+      aboutDialog.querySelectorAll("[data-about-tab]").forEach(function (tab) {
+        const selected = tab.getAttribute("data-about-tab") === tabId;
+        tab.setAttribute("aria-selected", selected ? "true" : "false");
+        tab.tabIndex = selected ? 0 : -1;
+      });
+      aboutDialog.querySelectorAll("[data-about-panel]").forEach(function (panel) {
+        panel.hidden = panel.getAttribute("data-about-panel") !== tabId;
+      });
+      if (!aboutDialog.open) aboutDialog.showModal();
+    }
+    document.getElementById("open-about").addEventListener("click", function () {
+      showAbout("history");
+    });
+    aboutDialog.querySelectorAll("[data-about-tab]").forEach(function (tab) {
+      tab.addEventListener("click", function () {
+        showAbout(tab.getAttribute("data-about-tab"));
+      });
+    });
+    document.querySelectorAll("[data-about]").forEach(function (link) {
+      link.addEventListener("click", function (event) {
+        event.preventDefault();
+        showAbout(link.getAttribute("data-about"));
+      });
+    });
+    aboutDialog.querySelectorAll("[data-close-about]").forEach(function (button) {
+      button.addEventListener("click", function () {
+        aboutDialog.close();
+      });
+    });
+  </script>
+</body>
+</html>

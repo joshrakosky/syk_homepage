@@ -1,0 +1,1015 @@
+/*
+  Stryker store landing page — developer example.
+  Static layout only. Search, account, cart, and links are visual.
+
+  Brand gold (Pantone 7549 C / 139 C)
+  Flat gold is for type, icons, and strokes. Gradients stay out of those.
+  The gold gradient is an 80/20 linear field, left to right, used on the
+  footer rule. The About button is flat gold.
+
+  Designer fonts (external page). Weights match the font files so the
+  browser does not synthesize a bolder or lighter face.
+  Egyptienne Light stays at 300. Do not bold it.
+  Futura Bold is the emphasis in a combined headline.
+  Humanist 712 Bold is body emphasis only.
+
+  Body copy should be Humanist 712 for Stryker Regular. That file is not
+  in assets/fonts yet, so running text uses Arial until it is added.
+
+  Rockwell.ttf is in the folder for internal documents only. The general-use
+  sheet says not to use it on external materials, so this page does not load it.
+*/
+
+@font-face {
+  font-family: "Egyptienne for Stryker Light";
+  src: url("../assets/fonts/EgyptienneforStryker-Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Futura for Stryker Bold";
+  src: url("../assets/fonts/FuturaforStryker-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Humanist 712 for Stryker";
+  src: url("../assets/fonts/Humanist712forStryker-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --gold: #ffb500;
+  --gold-deep: #af6d04;
+  /* 80% flat gold, then the last 20% falls to deep gold. Do not move the 80% stop. */
+  --gold-gradient: linear-gradient(90deg, #ffb500 0% 80%, #af6d04 100%);
+  --ink: rgb(13, 8, 9);
+  --black: #000;
+  --white: #fff;
+  --text: #1a1a1a;
+  --muted: #5e6362;
+  --line: #e4e4e4;
+  --panel: #eef0ee;
+  --panel-dark: #3a3d3c;
+  --content: 1240px;
+  --font-display-light: "Egyptienne for Stryker Light", "Times New Roman", serif;
+  --font-display-bold: "Futura for Stryker Bold", Arial, Helvetica, sans-serif;
+  --font-emphasis: "Humanist 712 for Stryker", Arial, Helvetica, sans-serif;
+  --font-body: Arial, Helvetica, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: var(--text);
+  background: var(--white);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+.sprite {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  display: block;
+  flex: none;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.wrap {
+  width: min(var(--content), calc(100% - 48px));
+  margin-inline: auto;
+}
+
+/* Header -------------------------------------------------------------- */
+
+.site-header {
+  background: var(--white);
+}
+
+.header-inner {
+  display: grid;
+  grid-template-columns: 160px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 28px;
+  min-height: 78px;
+}
+
+.logo {
+  display: block;
+  width: 148px;
+}
+
+.logo img {
+  width: 100%;
+  height: auto;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  width: min(520px, 100%);
+  margin-inline: auto;
+  border: 1px solid #d5d5d5;
+  border-radius: 8px;
+  background: var(--white);
+  padding-left: 14px;
+}
+
+.search input {
+  flex: 1;
+  min-width: 0;
+  height: 40px;
+  border: 0;
+  background: transparent;
+  color: var(--text);
+  /* Egyptienne Light is the light Stryker face. Keep it at 300 so the browser does not fake a heavier cut. */
+  font-family: var(--font-display-light);
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.search input:focus {
+  outline: none;
+}
+
+.search input::placeholder {
+  color: #8d8d8d;
+}
+
+.search:focus-within {
+  border-color: var(--gold);
+}
+
+.search button {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  background: transparent;
+  color: #333;
+  cursor: pointer;
+}
+
+.header-tools {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  font-family: var(--font-display-light);
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.header-tools a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+}
+
+.header-tools a:hover {
+  color: var(--gold-deep);
+}
+
+.header-tools .icon-chevron {
+  width: 14px;
+  height: 14px;
+}
+
+/* Nav ----------------------------------------------------------------- */
+
+/* Flat gold bar, like the corporate site. Type stays regular weight, not Futura Bold. */
+.site-nav {
+  position: relative;
+  z-index: 40;
+  background: var(--gold);
+  color: var(--black);
+}
+
+.nav-list {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-list > li {
+  position: relative;
+}
+
+.nav-list > li > a {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin: 8px 0;
+  padding: 6px 12px;
+  text-decoration: none;
+  font-size: 12px;
+  /* Arial has no medium cut, so 500 draws the same as regular. 600 is the small step up. */
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.nav-list > li > a .icon {
+  width: 12px;
+  height: 12px;
+}
+
+/* Grey block, matching the corporate nav hover. Text flips to white on that field. */
+.nav-list > li > a:hover,
+.nav-list > li > a:focus-visible,
+.has-menu:hover > a,
+.has-menu:focus-within > a {
+  background: #545857;
+  color: var(--white);
+  text-decoration: none;
+  outline-color: var(--black);
+}
+
+/* Apparel menu. The flyout sits to the right of Men's, Women's, or By Look. */
+.menu,
+.flyout {
+  display: none;
+  position: absolute;
+  z-index: 2;
+  min-width: 200px;
+  margin: 0;
+  padding: 8px 0;
+  list-style: none;
+  background: var(--white);
+  color: var(--ink);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.16);
+}
+
+.menu {
+  top: 100%;
+  left: 0;
+}
+
+.menu::before,
+.flyout::before {
+  content: "";
+  position: absolute;
+}
+
+.menu::before {
+  top: -10px;
+  left: 0;
+  right: 0;
+  height: 10px;
+}
+
+.has-menu:hover > .menu,
+.has-menu:focus-within > .menu,
+.has-flyout:hover > .flyout,
+.has-flyout:focus-within > .flyout {
+  display: block;
+}
+
+.has-flyout {
+  position: relative;
+}
+
+.flyout {
+  top: -8px;
+  left: 100%;
+}
+
+.flyout::before {
+  top: 0;
+  bottom: 0;
+  left: -10px;
+  width: 10px;
+}
+
+.menu a,
+.flyout a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin: 0;
+  padding: 10px 16px;
+  background: transparent;
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: none;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.menu a:hover,
+.flyout a:hover,
+.menu a:focus-visible,
+.flyout a:focus-visible,
+.has-flyout:hover > a,
+.has-flyout:focus-within > a {
+  background: #545857;
+  color: var(--white);
+  outline-color: var(--black);
+}
+
+.menu .icon,
+.flyout .icon {
+  width: 14px;
+  height: 14px;
+}
+
+/* Hero ---------------------------------------------------------------- */
+
+.hero {
+  position: relative;
+  min-height: 460px;
+  display: grid;
+  align-items: center;
+  color: var(--white);
+  background: #141414;
+  overflow: hidden;
+}
+
+.hero__photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center right;
+}
+
+/* Dark scrim so the headline stays readable. This is not a brand gradient. */
+.hero__shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.78) 0%,
+    rgba(0, 0, 0, 0.5) 36%,
+    rgba(0, 0, 0, 0.08) 68%
+  );
+}
+
+.hero__content {
+  position: relative;
+  z-index: 1;
+  padding: 72px 0 80px;
+}
+
+.hero h1 {
+  margin: 0;
+  font-family: var(--font-display-light);
+  font-size: clamp(46px, 5.4vw, 68px);
+  font-weight: 300;
+  line-height: 0.95;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+/* Futura Bold carries the emphasis. Gold stays a flat color, not a gradient. */
+.hero h1 span {
+  font-family: var(--font-display-bold);
+  font-weight: 700;
+  color: var(--gold);
+}
+
+.hero p {
+  margin: 18px 0 28px;
+  font-family: var(--font-display-light);
+  font-size: clamp(18px, 2vw, 24px);
+  font-weight: 300;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 18px;
+  border: 2px solid transparent;
+  border-radius: 3px;
+  background: var(--gold);
+  color: var(--black);
+  font-family: var(--font-display-bold);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: transform 200ms ease, box-shadow 200ms ease, background-color 200ms ease, color 200ms ease;
+}
+
+.btn .icon {
+  width: 16px;
+  height: 16px;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.22);
+}
+
+.btn--outline {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold);
+}
+
+.btn--outline:hover {
+  background: var(--gold);
+  color: var(--black);
+}
+
+/* Categories ---------------------------------------------------------- */
+
+.page-body {
+  padding: 28px 0 36px;
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  /* Room so a scaled card is not clipped by the section edge. */
+  padding: 8px 4px 12px;
+}
+
+.category-card {
+  position: relative;
+  display: block;
+  background: var(--white);
+  border: 1px solid #eee;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  text-decoration: none;
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.category-card:hover,
+.category-card:focus-visible {
+  transform: scale(1.05);
+  z-index: 2;
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.16);
+}
+
+.category-card__photo {
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border-radius: 8px 8px 0 0;
+  background: #d9d9d9;
+}
+
+.category-card__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 200ms ease;
+}
+
+.category-card:hover .category-card__photo img,
+.category-card:focus-visible .category-card__photo img {
+  transform: scale(1.08);
+}
+
+.category-card__label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  min-height: 72px;
+  padding: 18px 16px 20px;
+  color: var(--ink);
+  font-family: var(--font-display-bold);
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  line-height: 1.15;
+  text-transform: uppercase;
+}
+
+.category-card__label .icon {
+  width: 18px;
+  height: 18px;
+  color: var(--gold);
+}
+
+/* Service bar --------------------------------------------------------- */
+
+.service-bar {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin-top: 28px;
+  padding: 16px 18px;
+  border-radius: 8px;
+  background: var(--black);
+  color: var(--white);
+}
+
+/* Short gold ticks between the heading, the icon group, and the button. */
+.service-bar__rule {
+  flex: none;
+  width: 1px;
+  height: 28px;
+  background: var(--gold);
+}
+
+.service-bar h2 {
+  flex: 0 0 150px;
+  margin: 0 16px 0 0;
+  font-family: var(--font-display-bold);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+
+.service-bar__items {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  min-width: 0;
+}
+
+.service {
+  display: flex;
+  flex: 1 1 0;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-width: 0;
+  font-family: var(--font-display-bold);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+/* Center both lines so a shorter second line does not pull the label left. */
+.service span {
+  text-align: center;
+}
+
+.service-bar > .btn {
+  margin-left: 16px;
+}
+
+.service .icon {
+  width: 30px;
+  height: 30px;
+}
+
+/* Brand ticker -------------------------------------------------------- */
+
+/* Full-width strip at the top of the page, above the header and search. */
+.brand-ticker {
+  overflow: hidden;
+  border-bottom: 1px solid #ececec;
+  background: var(--white);
+}
+
+.brand-ticker__track {
+  display: flex;
+  width: max-content;
+  animation: brand-ticker 90s linear infinite;
+}
+
+.brand-ticker:hover .brand-ticker__track,
+.brand-ticker:focus-within .brand-ticker__track {
+  animation-play-state: paused;
+}
+
+.brand-ticker__list {
+  display: flex;
+  align-items: center;
+  gap: 64px;
+  margin: 0;
+  padding: 22px 32px;
+  list-style: none;
+}
+
+.brand-ticker__list li {
+  display: flex;
+  align-items: center;
+}
+
+.brand-ticker__list img {
+  height: 34px;
+  width: auto;
+  display: block;
+}
+
+@keyframes brand-ticker {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Footer -------------------------------------------------------------- */
+
+.site-footer {
+  background: var(--black);
+  color: #cfcfcf;
+  text-align: center;
+}
+
+.footer-nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 18px 42px;
+  margin: 0;
+  padding: 34px 24px 18px;
+  list-style: none;
+}
+
+.footer-nav a {
+  color: #dedede;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.footer-nav a:hover {
+  color: var(--white);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.footer-rule {
+  width: min(920px, calc(100% - 80px));
+  height: 2px;
+  margin: 8px auto 18px;
+  border: 0;
+  background: var(--gold-gradient);
+}
+
+.fine-print {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 24px 36px;
+  color: #bdbdbd;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  line-height: 1.55;
+}
+
+.fine-print p {
+  margin: 0 0 8px;
+}
+
+.fine-print a {
+  color: inherit;
+}
+
+.fine-print a:hover {
+  color: var(--white);
+}
+
+/* Custom project dialog ------------------------------------------------ */
+
+.modal {
+  width: min(640px, calc(100% - 32px));
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.modal::backdrop {
+  background: rgba(0, 0, 0, 0.62);
+}
+
+.modal__panel {
+  margin: 0;
+  padding: 28px 28px 24px;
+  background: var(--white);
+  color: var(--ink);
+  border-top: 4px solid var(--gold);
+  max-height: calc(100vh - 48px);
+  overflow: auto;
+}
+
+.modal__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.modal__head h2 {
+  margin: 0;
+  font-family: var(--font-display-bold);
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+
+.modal__close {
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  font-size: 32px;
+  line-height: 0.8;
+  cursor: pointer;
+}
+
+.modal__lead {
+  margin: 10px 0 22px;
+  font-family: var(--font-display-light);
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.modal__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px 16px;
+  margin-bottom: 14px;
+}
+
+.modal label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 14px;
+  font-family: var(--font-display-bold);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.modal__grid label {
+  margin-bottom: 0;
+}
+
+.modal input,
+.modal textarea {
+  width: 100%;
+  border: 1px solid #d5d5d5;
+  border-radius: 4px;
+  padding: 10px 12px;
+  color: var(--ink);
+  font: 400 15px/1.4 var(--font-body);
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.modal input:focus,
+.modal textarea:focus {
+  outline: 2px solid var(--gold);
+  border-color: var(--gold);
+}
+
+.modal__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.btn--ghost {
+  background: transparent;
+  color: var(--ink);
+  border-color: transparent;
+}
+
+.btn--ghost:hover {
+  background: transparent;
+  color: var(--ink);
+  box-shadow: none;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+button.btn {
+  cursor: pointer;
+}
+
+/* About dialog. Same panel as the custom project form, with tabs instead of fields.
+   Height stays fixed so switching tabs does not resize the dialog. */
+.modal--about {
+  width: min(760px, calc(100% - 32px));
+}
+
+.modal--about .modal__panel {
+  display: flex;
+  flex-direction: column;
+  height: 360px;
+  overflow: hidden;
+}
+
+.about-panel {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+}
+
+.about-panel[hidden] {
+  display: none;
+}
+
+.about-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 18px;
+  margin: 18px 0 20px;
+  border-bottom: 1px solid #ececec;
+}
+
+.about-tabs button {
+  border: 0;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  padding: 8px 0 10px;
+  background: transparent;
+  color: var(--muted);
+  font-family: var(--font-display-bold);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.about-tabs button[aria-selected="true"] {
+  color: var(--ink);
+  border-bottom-color: var(--gold);
+}
+
+.about-panel h3 {
+  margin: 0 0 8px;
+  font-family: var(--font-display-bold);
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.about-panel p,
+.about-panel li {
+  margin: 0 0 12px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.about-panel ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .category-card,
+  .category-card__photo img,
+  .btn,
+  .brand-ticker__track {
+    transition: none;
+  }
+
+  .category-card:hover,
+  .category-card:focus-visible,
+  .btn:hover {
+    transform: none;
+  }
+
+  .brand-ticker__track {
+    animation: none;
+  }
+}
+
+@media (max-width: 1100px) {
+  .nav-list {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding: 8px 0 10px;
+  }
+
+  .category-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .service-bar {
+    flex-wrap: wrap;
+  }
+
+  .service-bar__rule {
+    display: none;
+  }
+
+  .service-bar h2 {
+    flex-basis: 100%;
+    margin-right: 0;
+  }
+
+  .service-bar > .btn {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 760px) {
+  .header-inner {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 14px 0;
+  }
+
+  .menu,
+  .flyout {
+    position: static;
+    min-width: 0;
+    box-shadow: none;
+  }
+
+  .menu::before,
+  .flyout::before {
+    display: none;
+  }
+
+  .search {
+    grid-column: 1 / -1;
+    max-width: none;
+  }
+
+  .category-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-bar__items {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 16px 22px;
+  }
+
+  .modal__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+}
