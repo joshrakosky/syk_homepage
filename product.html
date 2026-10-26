@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stryker | Product</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <svg class="sprite" aria-hidden="true">
+    <symbol id="i-search" viewBox="0 0 24 24">
+      <circle cx="10.5" cy="10.5" r="6.25" fill="none" stroke="currentColor" stroke-width="2"/>
+      <path d="M15.2 15.2L20.5 20.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="i-user" viewBox="0 0 24 24">
+      <circle cx="12" cy="8" r="3.2" fill="none" stroke="currentColor" stroke-width="1.8"/>
+      <path d="M5 19.4c1.3-3.1 3.7-4.6 7-4.6s5.7 1.5 7 4.6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="i-cart" viewBox="0 0 24 24">
+      <path d="M4 5h2.2l1.6 9.2h9.7l1.8-6.2H8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>
+      <circle cx="10" cy="18.2" r="1.35" fill="currentColor"/>
+      <circle cx="16.2" cy="18.2" r="1.35" fill="currentColor"/>
+    </symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24">
+      <path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="i-chevron-down" viewBox="0 0 24 24">
+      <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+  </svg>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="logo" href="index.html">
+        <img src="assets/logo/stryker-logo.png" alt="Stryker">
+      </a>
+      <form class="search" role="search" action="#" method="get">
+        <label class="visually-hidden" for="site-search">Search the site</label>
+        <input id="site-search" type="search" name="q" placeholder="Search the site." autocomplete="off">
+        <button type="submit" aria-label="Search">
+          <svg class="icon"><use href="#i-search"></use></svg>
+        </button>
+      </form>
+      <div class="header-tools">
+        <a href="#">
+          <svg class="icon" aria-hidden="true"><use href="#i-user"></use></svg>
+          My Account
+          <svg class="icon icon-chevron" aria-hidden="true"><use href="#i-chevron-down"></use></svg>
+        </a>
+        <a class="cart-link" href="checkout.html">
+          <svg class="icon" aria-hidden="true"><use href="#i-cart"></use></svg>
+          Cart
+          <span class="cart-count" data-cart-count hidden>0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <nav class="site-nav" aria-label="Primary">
+    <div class="wrap">
+      <ul class="nav-list">
+        <li class="has-menu">
+          <a href="apparel.html" aria-haspopup="true">Apparel &amp; Uniforms <svg class="icon icon-chevron" aria-hidden="true"><use href="#i-chevron-down"></use></svg></a>
+          <ul class="menu">
+            <li class="has-flyout">
+              <a href="#" aria-haspopup="true">Men's <svg class="icon" aria-hidden="true"><use href="#i-chevron"></use></svg></a>
+              <ul class="flyout">
+                <li><a href="#">Polos</a></li>
+                <li><a href="#">Casual</a></li>
+                <li><a href="#">Pullovers</a></li>
+                <li><a href="#">Dress Shirts</a></li>
+                <li><a href="#">Outerwear</a></li>
+              </ul>
+            </li>
+            <li class="has-flyout">
+              <a href="#" aria-haspopup="true">Women's <svg class="icon" aria-hidden="true"><use href="#i-chevron"></use></svg></a>
+              <ul class="flyout">
+                <li><a href="#">Polos</a></li>
+                <li><a href="#">Casual</a></li>
+                <li><a href="#">Pullovers</a></li>
+                <li><a href="#">Dress Shirts</a></li>
+                <li><a href="#">Outerwear</a></li>
+              </ul>
+            </li>
+            <li class="has-flyout">
+              <a href="#" aria-haspopup="true">By Look <svg class="icon" aria-hidden="true"><use href="#i-chevron"></use></svg></a>
+              <ul class="flyout">
+                <li><a href="#">Healthcare</a></li>
+                <li><a href="#">Comp</a></li>
+                <li><a href="#">Conference</a></li>
+                <li><a href="#">Sales</a></li>
+                <li><a href="#">Meeting</a></li>
+                <li><a href="#">Team</a></li>
+                <li><a href="#">Travel</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Premium Brands</a></li>
+          </ul>
+        </li>
+        <li><a href="index.html">Headwear</a></li>
+        <li><a href="index.html">Bags &amp; Coolers</a></li>
+        <li><a href="index.html">Marketing &amp; Promo</a></li>
+        <li><a href="index.html">Print Center</a></li>
+        <li><a href="index.html">Trade Shows</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <div class="wrap page-body">
+      <p class="crumb"><a href="index.html">Home</a> / <a href="apparel.html">Apparel &amp; Uniforms</a> / <span id="crumb-name">Product</span></p>
+      <article class="product">
+        <div class="product__photo">
+          <img id="product-photo" src="assets/images/categories/apparel.jpg" alt="Apparel product">
+        </div>
+        <div>
+          <h1 class="page-title" id="product-name">Product</h1>
+          <p class="product__sku" id="product-sku"></p>
+          <p class="page-lead" id="product-text"></p>
+          <!-- Opens a stand-in chart. Swap the table when real measurements arrive. -->
+          <button type="button" class="chart-btn" id="open-chart">Size chart</button>
+          <p class="product__price" id="product-price"></p>
+
+          <fieldset class="choice">
+            <legend>Color <span id="color-name"></span></legend>
+            <div class="choice__row" id="color-row"></div>
+          </fieldset>
+          <fieldset class="choice" id="size-choice">
+            <legend>Size</legend>
+            <div class="choice__row" id="size-row"></div>
+          </fieldset>
+          <div class="order-row">
+            <label class="qty" id="qty-single">Quantity
+              <input id="qty" type="number" min="1" value="1">
+            </label>
+            <label class="bulk-check">
+              <input type="checkbox" id="bulk-order">
+              Bulk order
+            </label>
+          </div>
+          <!-- One quantity per size. Shown only while Bulk order is checked. -->
+          <div class="bulk-grid" id="bulk-grid" hidden></div>
+          <button type="button" class="btn" id="add-cart">Add to Cart</button>
+          <p class="form-note" id="form-note" role="status"></p>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <dialog class="modal" id="size-chart" aria-labelledby="chart-title">
+    <div class="modal__panel">
+      <div class="modal__head">
+        <h2 id="chart-title">Size chart</h2>
+        <button type="button" class="modal__close" data-close-chart aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <p class="modal__lead">Example measurements in inches. Replace with the approved chart.</p>
+      <table class="chart">
+        <thead>
+          <tr><th>Size</th><th>Chest</th><th>Length</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>XS</td><td>34</td><td>27</td></tr>
+          <tr><td>S</td><td>36</td><td>28</td></tr>
+          <tr><td>M</td><td>40</td><td>29</td></tr>
+          <tr><td>L</td><td>44</td><td>30</td></tr>
+          <tr><td>XL</td><td>48</td><td>31</td></tr>
+          <tr><td>2XL</td><td>52</td><td>32</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </dialog>
+
+  <!-- Shown after Add to Cart. Checkout does not charge a card. -->
+  <dialog class="modal" id="added" aria-labelledby="added-title">
+    <div class="modal__panel">
+      <div class="modal__head">
+        <h2 id="added-title">Added to cart</h2>
+        <button type="button" class="modal__close" data-close-added aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <p class="modal__lead" id="added-text"></p>
+      <div class="added__actions">
+        <a class="btn" href="checkout.html">Proceed to Checkout</a>
+        <a class="btn btn--line" href="apparel.html">Continue Shopping</a>
+      </div>
+    </div>
+  </dialog>
+
+  <footer class="site-footer">
+    <ul class="footer-nav">
+      <li><a href="index.html">Product Database</a></li>
+      <li><a href="index.html">FAQs</a></li>
+      <li><a href="index.html">Contact Us</a></li>
+      <li><a href="index.html">Shipping Information</a></li>
+      <li><a href="index.html">Return Policy</a></li>
+      <li><a href="index.html">Brands We Offer</a></li>
+    </ul>
+    <hr class="footer-rule">
+    <div class="fine-print">
+      <p>&copy; 2026 Stryker. All rights reserved. | Powered by <a href="index.html">Proforma ProStores</a></p>
+      <p>Stryker adheres to AdvaMed's Code of Ethics and our HCPI guidance for employees.</p>
+      <p>Promotional items may not be purchased and provided to our customers or potential customers.</p>
+    </div>
+  </footer>
+  <script src="js/store.js"></script>
+  <script src="js/product.js"></script>
+</body>
+</html>

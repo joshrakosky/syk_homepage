@@ -10,7 +10,7 @@
   Static developer example. Open index.html in a browser.
 
   Placeholder links (href="#"). Suggested live routes:
-  Apparel & Uniforms /apparel
+  Apparel & Uniforms apparel.html
   Headwear /headwear
   Bags & Coolers /bags-coolers
   Premium Brands /premium-brands
@@ -206,7 +206,7 @@
 
   <header class="site-header">
     <div class="wrap header-inner">
-      <a class="logo" href="#">
+      <a class="logo" href="index.html">
         <!-- Transparent wordmark, cropped to the lettering. Swap this file to update the logo. -->
         <img src="assets/logo/stryker-logo.png" alt="Stryker">
       </a>
@@ -227,9 +227,10 @@
           My Account
           <svg class="icon icon-chevron" aria-hidden="true"><use href="#i-chevron-down"></use></svg>
         </a>
-        <a href="#">
+        <a class="cart-link" href="checkout.html">
           <svg class="icon" aria-hidden="true"><use href="#i-cart"></use></svg>
           Cart
+          <span class="cart-count" data-cart-count hidden>0</span>
         </a>
       </div>
     </div>
@@ -239,7 +240,7 @@
     <div class="wrap">
       <ul class="nav-list">
         <li class="has-menu">
-          <a href="#" aria-haspopup="true">Apparel &amp; Uniforms <svg class="icon icon-chevron" aria-hidden="true"><use href="#i-chevron-down"></use></svg></a>
+          <a href="apparel.html" aria-haspopup="true">Apparel &amp; Uniforms <svg class="icon icon-chevron" aria-hidden="true"><use href="#i-chevron-down"></use></svg></a>
           <!-- Hover opens this panel. Men's, Women's, and By Look fly out to the right. -->
           <ul class="menu">
             <li class="has-flyout">
@@ -274,15 +275,44 @@
                 <li><a href="#">Travel</a></li>
               </ul>
             </li>
+            <li><a href="#">Premium Brands</a></li>
           </ul>
         </li>
         <li><a href="#">Headwear</a></li>
         <li><a href="#">Bags &amp; Coolers</a></li>
-        <li><a href="#">Premium Brands</a></li>
-        <li><a href="#">Marketing &amp; Promo</a></li>
-        <li><a href="#">Print Center</a></li>
-        <li><a href="#">Trade Shows</a></li>
-        <li><a href="#">Quick Turn</a></li>
+        <li class="has-menu">
+          <a href="#" aria-haspopup="true">Marketing &amp; Promo <svg class="icon icon-chevron" aria-hidden="true"><use href="#i-chevron-down"></use></svg></a>
+          <!-- Single-level panel. No flyouts. -->
+          <ul class="menu">
+            <li><a href="#">Drinkware</a></li>
+            <li><a href="#">Outdoor and Leisure</a></li>
+            <li><a href="#">Electronics</a></li>
+            <li><a href="#">Travel Essentials</a></li>
+            <li><a href="#">Quick Turn</a></li>
+          </ul>
+        </li>
+        <li class="has-menu">
+          <a href="#" aria-haspopup="true">Print Center <svg class="icon icon-chevron" aria-hidden="true"><use href="#i-chevron-down"></use></svg></a>
+          <ul class="menu">
+            <li><a href="#">Business Cards</a></li>
+            <li><a href="#">Brochures</a></li>
+            <li><a href="#">Posters</a></li>
+            <li><a href="#">Rack Cards</a></li>
+            <li><a href="#">Postcards</a></li>
+            <li><a href="#">Envelopes</a></li>
+            <li><a href="#">Pads</a></li>
+          </ul>
+        </li>
+        <li class="has-menu">
+          <a href="#" aria-haspopup="true">Trade Shows <svg class="icon icon-chevron" aria-hidden="true"><use href="#i-chevron-down"></use></svg></a>
+          <ul class="menu">
+            <li><a href="#">Table Covers</a></li>
+            <li><a href="#">Retractable Banners</a></li>
+            <li><a href="#">Backdrops</a></li>
+            <li><a href="#">Vinyl Banners</a></li>
+            <li><a href="#">Lighting</a></li>
+          </ul>
+        </li>
       </ul>
     </div>
   </nav>
@@ -303,7 +333,7 @@
       <!-- Category tiles. Hover enlarges the whole card. Photos: assets/images/categories/ -->
       <section aria-label="Shop by category">
         <div class="category-grid">
-          <a class="category-card" href="#">
+          <a class="category-card" href="apparel.html">
             <div class="category-card__photo">
               <img src="assets/images/categories/apparel.jpg" alt="Charcoal and black polo shirts">
             </div>
@@ -513,6 +543,7 @@
     </div>
   </dialog>
 
+  <script src="js/store.js"></script>
   <script>
     // The button opens the native dialog. Cancel and the corner control close it without submitting.
     const projectDialog = document.getElementById("custom-project");

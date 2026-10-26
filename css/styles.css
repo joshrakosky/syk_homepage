@@ -222,12 +222,15 @@ a {
 
 /* Nav ----------------------------------------------------------------- */
 
-/* Flat gold bar, like the corporate site. Type stays regular weight, not Futura Bold. */
+/* Flat gold bar. Futura on file is Bold only, which reads wide and heavy.
+   The corporate bar is a regular gothic, so the bar and menus use that. */
 .site-nav {
   position: relative;
   z-index: 40;
   background: var(--gold);
   color: var(--black);
+  font-family: var(--font-body);
+  font-weight: 400;
 }
 
 .nav-list {
@@ -247,13 +250,12 @@ a {
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  margin: 8px 0;
-  padding: 6px 12px;
+  margin: 6px 0;
+  padding: 5px 10px;
   text-decoration: none;
   font-size: 12px;
-  /* Arial has no medium cut, so 500 draws the same as regular. 600 is the small step up. */
-  font-weight: 600;
-  letter-spacing: 0.04em;
+  font-weight: 400;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   white-space: nowrap;
 }
@@ -274,7 +276,7 @@ a {
   outline-color: var(--black);
 }
 
-/* Apparel menu. The flyout sits to the right of Men's, Women's, or By Look. */
+/* Nav dropdowns. Apparel flyouts sit to the right of Men's, Women's, or By Look. */
 .menu,
 .flyout {
   display: none;
@@ -340,9 +342,10 @@ a {
   padding: 10px 16px;
   background: transparent;
   color: var(--ink);
+  font-family: var(--font-body);
   font-size: 14px;
   font-weight: 400;
-  letter-spacing: 0;
+  letter-spacing: 0.01em;
   text-transform: none;
   text-decoration: none;
   white-space: nowrap;
@@ -443,7 +446,7 @@ a {
   letter-spacing: 0.06em;
   text-transform: uppercase;
   text-decoration: none;
-  transition: transform 200ms ease, box-shadow 200ms ease, background-color 200ms ease, color 200ms ease;
+  transition: transform 200ms ease, background-color 200ms ease, color 200ms ease;
 }
 
 .btn .icon {
@@ -451,9 +454,10 @@ a {
   height: 16px;
 }
 
+/* Enlarge on hover. No drop shadow on Add to Cart, About Us, or the other gold buttons. */
 .btn:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.22);
+  transform: scale(1.05);
+  box-shadow: none;
 }
 
 .btn--outline {
@@ -915,6 +919,437 @@ button.btn {
   padding-left: 18px;
 }
 
+/* Catalog pages. Test cart lives in sessionStorage. See js/store.js. */
+
+.cart-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.cart-count {
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  border-radius: 9px;
+  background: var(--gold);
+  color: var(--black);
+  font-family: var(--font-display-bold);
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 18px;
+  text-align: center;
+}
+
+.cart-count[hidden] {
+  display: none;
+}
+
+.crumb {
+  margin: 0 0 14px;
+  font-family: var(--font-display-bold);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.crumb a {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.crumb a:hover {
+  color: var(--gold-deep);
+}
+
+.page-title {
+  margin: 0 0 8px;
+  font-family: var(--font-display-bold);
+  font-size: clamp(32px, 4vw, 42px);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+
+.page-lead {
+  margin: 0 0 28px;
+  font-family: var(--font-display-light);
+  font-size: 20px;
+  font-weight: 300;
+}
+
+/* Title on the left, sort on the right, as marked on the category page. */
+.catalog-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 28px;
+}
+
+.catalog-head .page-lead {
+  margin-bottom: 0;
+}
+
+.sort {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 0 0 2px;
+  font-family: var(--font-display-bold);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.sort select {
+  min-width: 190px;
+  height: 40px;
+  border: 1px solid #c8c8c8;
+  border-radius: 4px;
+  padding: 0 10px;
+  background: var(--white);
+  color: var(--text);
+  font: 400 15px/1 var(--font-body);
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.page-lead a {
+  color: var(--ink);
+}
+
+.chart-btn {
+  display: inline-flex;
+  margin: 0 0 22px;
+  border: 0;
+  border-bottom: 2px solid var(--gold);
+  padding: 0 0 2px;
+  background: transparent;
+  color: var(--ink);
+  font-family: var(--font-display-bold);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.product .page-lead {
+  margin-bottom: 10px;
+}
+
+.product__sku {
+  margin: 0 0 8px;
+  color: var(--muted);
+  font-family: var(--font-display-bold);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.product {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.95fr);
+  gap: 40px 48px;
+  align-items: start;
+}
+
+.product__photo {
+  overflow: hidden;
+  border-radius: 8px;
+  background: var(--panel);
+}
+
+.product__photo img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+.product__price {
+  margin: 10px 0 22px;
+  font-family: var(--font-display-bold);
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.choice {
+  margin: 0 0 18px;
+  padding: 0;
+  border: 0;
+}
+
+.choice legend {
+  margin-bottom: 8px;
+  font-family: var(--font-display-bold);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.choice__row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.swatch,
+.size {
+  border: 1px solid #c8c8c8;
+  background: var(--white);
+  cursor: pointer;
+}
+
+.swatch {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  padding: 0;
+}
+
+.size {
+  min-width: 46px;
+  height: 40px;
+  padding: 0 10px;
+  font-family: var(--font-display-bold);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.swatch[aria-pressed="true"],
+.size[aria-pressed="true"] {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}
+
+.qty {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+  font-family: var(--font-display-bold);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.order-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 22px;
+  margin: 0 0 18px;
+}
+
+.bulk-check {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  font-family: var(--font-display-bold);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.bulk-check input {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--gold);
+}
+
+.bulk-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin: 0 0 18px;
+}
+
+/* display: grid above would otherwise beat the hidden attribute and show the grid early. */
+.bulk-grid[hidden] {
+  display: none;
+}
+
+.bulk-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-family: var(--font-display-bold);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.bulk-cell input,
+.qty input {
+  width: 100%;
+  height: 40px;
+  border: 1px solid #c8c8c8;
+  border-radius: 4px;
+  padding: 0 10px;
+  font: 400 16px/1 var(--font-body);
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.qty input {
+  width: 72px;
+}
+
+.chart {
+  width: 100%;
+  margin-top: 4px;
+  border-collapse: collapse;
+  font-size: 15px;
+}
+
+.chart th {
+  padding: 8px 8px 8px 0;
+  border-bottom: 2px solid var(--gold);
+  font-family: var(--font-display-bold);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.chart td {
+  padding: 10px 8px 10px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.form-note {
+  min-height: 1.4em;
+  margin: 10px 0 0;
+  color: #8a2b2b;
+  font-size: 14px;
+}
+
+.added {
+  margin-top: 20px;
+  padding: 16px 16px 18px;
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--gold);
+}
+
+.added p {
+  margin: 0 0 14px;
+  font-family: var(--font-display-light);
+  font-size: 22px;
+  font-weight: 300;
+}
+
+.added__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.btn--line {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--ink);
+}
+
+.btn--line:hover {
+  background: var(--ink);
+  color: var(--white);
+}
+
+.cart-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cart-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.cart-list strong {
+  font-family: var(--font-display-bold);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.cart-total {
+  display: flex;
+  justify-content: space-between;
+  margin: 18px 0 24px;
+  font-family: var(--font-display-bold);
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.product-card {
+  display: block;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  background: var(--white);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  color: var(--ink);
+  text-decoration: none;
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.product-card:hover,
+.product-card:focus-visible {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.14);
+}
+
+.product-card img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 8px 8px 0 0;
+}
+
+.product-card__name,
+.product-card__price {
+  display: block;
+  padding: 0 16px;
+  font-family: var(--font-display-bold);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.product-card__name {
+  padding-top: 14px;
+  font-size: 15px;
+}
+
+.product-card__price {
+  padding-bottom: 16px;
+  font-size: 14px;
+}
+
 a:focus-visible,
 button:focus-visible {
   outline: 2px solid var(--gold);
@@ -948,6 +1383,10 @@ button:focus-visible {
   }
 
   .category-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .product-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -1011,5 +1450,22 @@ button:focus-visible {
     flex-direction: column;
     align-items: center;
     gap: 12px;
+  }
+
+  .product {
+    grid-template-columns: 1fr;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .catalog-head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .bulk-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
