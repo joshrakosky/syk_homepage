@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stryker | Business Cards</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <svg class="sprite" aria-hidden="true">
+    <symbol id="i-search" viewBox="0 0 24 24">
+      <circle cx="10.5" cy="10.5" r="6.25" fill="none" stroke="currentColor" stroke-width="2"/>
+      <path d="M15.2 15.2L20.5 20.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="i-user" viewBox="0 0 24 24">
+      <circle cx="12" cy="8" r="3.2" fill="none" stroke="currentColor" stroke-width="1.8"/>
+      <path d="M5 19.4c1.3-3.1 3.7-4.6 7-4.6s5.7 1.5 7 4.6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="i-cart" viewBox="0 0 24 24">
+      <path d="M4 5h2.2l1.6 9.2h9.7l1.8-6.2H8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>
+      <circle cx="10" cy="18.2" r="1.35" fill="currentColor"/>
+      <circle cx="16.2" cy="18.2" r="1.35" fill="currentColor"/>
+    </symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24">
+      <path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="i-chevron-down" viewBox="0 0 24 24">
+      <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+  </svg>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="logo" href="index.html">
+        <img src="assets/logo/stryker-logo.png" alt="Stryker">
+      </a>
+      <form class="search" role="search" action="#" method="get">
+        <label class="visually-hidden" for="site-search">Search the site</label>
+        <input id="site-search" type="search" name="q" placeholder="Search the site." autocomplete="off">
+        <button type="submit" aria-label="Search">
+          <svg class="icon"><use href="#i-search"></use></svg>
+        </button>
+      </form>
+      <div class="header-tools">
+        <a href="account.html">
+          <svg class="icon" aria-hidden="true"><use href="#i-user"></use></svg>
+          My Account
+        </a>
+        <a class="cart-link" href="checkout.html">
+          <svg class="icon" aria-hidden="true"><use href="#i-cart"></use></svg>
+          Cart
+          <span class="cart-count" data-cart-count hidden>0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <nav class="site-nav" aria-label="Primary">
+    <div class="wrap">
+      <ul class="nav-list">
+        <li class="has-menu">
+          <a href="apparel.html" aria-haspopup="true">Apparel &amp; Uniforms <svg class="icon icon-chevron" aria-hidden="true"><use href="#i-chevron-down"></use></svg></a>
+          <ul class="menu">
+            <li class="has-flyout">
+              <a href="#" aria-haspopup="true">Men's <svg class="icon" aria-hidden="true"><use href="#i-chevron"></use></svg></a>
+              <ul class="flyout">
+                <li><a href="#">Polos</a></li>
+                <li><a href="#">Scrubs</a></li>
+                <li><a href="#">Casual</a></li>
+                <li><a href="#">Pullovers</a></li>
+                <li><a href="#">Dress Shirts</a></li>
+                <li><a href="#">Outerwear</a></li>
+              </ul>
+            </li>
+            <li class="has-flyout">
+              <a href="#" aria-haspopup="true">Women's <svg class="icon" aria-hidden="true"><use href="#i-chevron"></use></svg></a>
+              <ul class="flyout">
+                <li><a href="#">Polos</a></li>
+                <li><a href="#">Scrubs</a></li>
+                <li><a href="#">Casual</a></li>
+                <li><a href="#">Pullovers</a></li>
+                <li><a href="#">Dress Shirts</a></li>
+                <li><a href="#">Outerwear</a></li>
+              </ul>
+            </li>
+            <li class="has-flyout">
+              <a href="#" aria-haspopup="true">Workwear <svg class="icon" aria-hidden="true"><use href="#i-chevron"></use></svg></a>
+              <ul class="flyout">
+                <li><a href="#">Hi-Vis</a></li>
+                <li><a href="#">Overalls</a></li>
+              </ul>
+            </li>
+            <li class="has-flyout">
+              <a href="#" aria-haspopup="true">Accessories <svg class="icon" aria-hidden="true"><use href="#i-chevron"></use></svg></a>
+              <ul class="flyout">
+                <li><a href="#">Scarves</a></li>
+                <li><a href="#">Gloves</a></li>
+                <li><a href="#">Towels</a></li>
+                <li><a href="#">Blankets</a></li>
+              </ul>
+            </li>
+            <li class="has-flyout">
+              <a href="#" aria-haspopup="true">Premium Brands <svg class="icon" aria-hidden="true"><use href="#i-chevron"></use></svg></a>
+              <ul class="flyout">
+                <li><a href="#">Adidas</a></li>
+                <li><a href="#">Brooks Brothers</a></li>
+                <li><a href="#">Carhartt</a></li>
+                <li><a href="#">Eddie Bauer</a></li>
+                <li><a href="#">FIGS</a></li>
+                <li><a href="#">Nike</a></li>
+                <li><a href="#">The North Face</a></li>
+                <li><a href="#">Travis Mathew</a></li>
+                <li><a href="#">Under Armour</a></li>
+                <li><a href="#">Vineyard Vines</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li class="has-menu">
+          <a href="index.html" aria-haspopup="true">Headwear <svg class="icon icon-chevron" aria-hidden="true"><use href="#i-chevron-down"></use></svg></a>
+          <ul class="menu">
+            <li><a href="#">Structured</a></li>
+            <li><a href="#">Unstructured</a></li>
+            <li><a href="#">Snapback</a></li>
+            <li><a href="#">Trucker Cap</a></li>
+            <li><a href="#">Bucket Cap</a></li>
+            <li><a href="#">Beanie</a></li>
+            <li><a href="#">Visor</a></li>
+          </ul>
+        </li>
+        <li class="has-menu">
+          <a href="index.html" aria-haspopup="true">Bags &amp; Coolers <svg class="icon icon-chevron" aria-hidden="true"><use href="#i-chevron-down"></use></svg></a>
+          <ul class="menu">
+            <li><a href="#">6-Can Cooler</a></li>
+            <li><a href="#">12-Can Cooler</a></li>
+            <li><a href="#">18-Can Cooler</a></li>
+            <li><a href="#">24-Can Cooler</a></li>
+            <li><a href="#">36-Can Cooler</a></li>
+            <li><a href="#">Messenger Bag</a></li>
+            <li><a href="#">Backpack</a></li>
+            <li><a href="#">Tote</a></li>
+            <li><a href="#">Duffle</a></li>
+          </ul>
+        </li>
+        <li class="has-menu">
+          <a href="index.html" aria-haspopup="true">Marketing &amp; Promo <svg class="icon icon-chevron" aria-hidden="true"><use href="#i-chevron-down"></use></svg></a>
+          <ul class="menu">
+            <li><a href="#">Drinkware</a></li>
+            <li><a href="#">Outdoor and Leisure</a></li>
+            <li><a href="#">Electronics</a></li>
+            <li><a href="#">Travel Essentials</a></li>
+            <li><a href="#">Desk &amp; Office</a></li>
+            <li><a href="#">Awards</a></li>
+            <li><a href="#">Eco-Friendly</a></li>
+            <li><a href="#">Quick Turn</a></li>
+          </ul>
+        </li>
+        <li class="has-menu">
+          <a href="#" aria-haspopup="true">Print Center <svg class="icon icon-chevron" aria-hidden="true"><use href="#i-chevron-down"></use></svg></a>
+          <ul class="menu">
+            <li><a href="business-card.html">Business Cards</a></li>
+            <li><a href="#">Brochures</a></li>
+            <li><a href="#">Posters</a></li>
+            <li><a href="#">Rack Cards</a></li>
+            <li><a href="#">Postcards</a></li>
+            <li><a href="#">Envelopes</a></li>
+            <li><a href="#">Pads</a></li>
+            <li><a href="#">Labels</a></li>
+          </ul>
+        </li>
+        <li><a href="index.html">Trade Shows</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <div class="wrap page-body">
+      <p class="crumb"><a href="index.html">Home</a> / Print Center / Business Cards</p>
+      <article class="product">
+        <!-- The proof stays blank until Generate proof writes the fields onto the card. -->
+        <div class="product__photo card-stage">
+          <div class="proof" id="proof">
+            <img class="proof__logo" src="assets/logo/stryker-logo.png" alt="Stryker">
+            <p class="proof__name is-empty" id="proof-name">Your name</p>
+            <p class="proof__title is-empty" id="proof-title">Title</p>
+            <ul class="proof__meta">
+              <li class="is-empty" id="proof-email">Email</li>
+              <li class="is-empty" id="proof-phone">Phone</li>
+              <li class="is-empty" id="proof-address">Address</li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <h1 class="page-title">Stryker Business Card</h1>
+          <p class="product__sku">Item # 31012</p>
+          <p class="page-lead">Enter the contact details, then generate a proof. The logo stays in the top left.</p>
+
+          <form class="card-fields" id="card-form">
+            <label>Name
+              <input id="card-name" type="text" name="name" autocomplete="name">
+            </label>
+            <label>Title
+              <input id="card-title" type="text" name="title" autocomplete="organization-title">
+            </label>
+            <label>Email
+              <input id="card-email" type="email" name="email" autocomplete="email">
+            </label>
+            <label>Phone
+              <input id="card-phone" type="tel" name="phone" autocomplete="tel">
+            </label>
+            <label>Address
+              <input id="card-address" type="text" name="address" autocomplete="street-address">
+            </label>
+            <button type="submit" class="btn">Generate proof</button>
+          </form>
+
+          <p class="product__price" id="card-price">$48.00</p>
+          <div class="order-row">
+            <label class="qty">Quantity
+              <select id="card-qty">
+                <option value="100">100</option>
+                <option value="250">250</option>
+                <option value="500">500</option>
+                <option value="1000">1000</option>
+              </select>
+            </label>
+          </div>
+          <button type="button" class="btn" id="add-cart">Add to Cart</button>
+          <p class="form-note" id="form-note" role="status"></p>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <!-- Shown after Add to Cart. Checkout does not charge a card. -->
+  <dialog class="modal" id="added" aria-labelledby="added-title">
+    <div class="modal__panel">
+      <div class="modal__head">
+        <h2 id="added-title">Added to cart</h2>
+        <button type="button" class="modal__close" data-close-added aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <p class="modal__lead" id="added-text"></p>
+      <div class="added__actions">
+        <a class="btn" href="checkout.html">Proceed to Checkout</a>
+        <a class="btn btn--line" href="index.html">Continue Shopping</a>
+      </div>
+    </div>
+  </dialog>
+
+  <footer class="site-footer">
+    <ul class="footer-nav">
+      <li><a href="https://www.metroprintedproducts.com" target="_blank" rel="noopener noreferrer">Product Database</a></li>
+      <li><a href="index.html">FAQs</a></li>
+      <li><a href="index.html">Contact Us</a></li>
+      <li><a href="index.html">Shipping Information</a></li>
+      <li><a href="index.html">Return Policy</a></li>
+    </ul>
+    <hr class="footer-rule">
+    <div class="fine-print">
+      <p>&copy; 2026 Stryker. All rights reserved. | Powered by <a href="index.html">Proforma ProStores</a></p>
+      <p>Stryker adheres to AdvaMed's Code of Ethics and our HCPI guidance for employees.</p>
+      <p>Promotional items may not be purchased and provided to our customers or potential customers.</p>
+    </div>
+  </footer>
+  <script src="js/store.js"></script>
+  <script src="js/card.js"></script>
+</body>
+</html>
