@@ -782,6 +782,10 @@ a {
   font-weight: 300;
 }
 
+.modal__lead a {
+  color: var(--ink);
+}
+
 .modal__grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1300,6 +1304,182 @@ button.btn {
   text-transform: uppercase;
 }
 
+.cart-list p {
+  margin: 4px 0 8px;
+}
+
+.cart-qty {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-display-bold);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.cart-qty input {
+  width: 64px;
+  height: 36px;
+  border: 1px solid #c8c8c8;
+  border-radius: 4px;
+  padding: 0 8px;
+  font: 400 16px/1 var(--font-body);
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.cart-side {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.cart-remove {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: var(--muted);
+  font: 400 14px/1 var(--font-body);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.cart-remove:hover {
+  color: var(--ink);
+}
+
+/* Checkout steps. Gold marks the step you are on. */
+.steps {
+  display: flex;
+  gap: 12px;
+  margin: 0 0 28px;
+  padding: 0;
+  list-style: none;
+}
+
+.steps li {
+  flex: 1;
+  padding: 8px 0;
+  border-top: 3px solid var(--line);
+  color: var(--muted);
+  font-family: var(--font-display-bold);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.steps li.is-current {
+  border-color: var(--gold);
+  color: var(--ink);
+}
+
+.steps li.is-done {
+  border-color: var(--ink);
+  color: var(--ink);
+}
+
+.checkout label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 14px;
+  font-family: var(--font-display-bold);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.checkout input,
+.checkout select {
+  width: 100%;
+  height: 44px;
+  border: 1px solid #d5d5d5;
+  border-radius: 4px;
+  padding: 0 12px;
+  color: var(--ink);
+  background: var(--white);
+  font: 400 15px/1.4 var(--font-body);
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.checkout input:focus,
+.checkout select:focus {
+  outline: 2px solid var(--gold);
+  border-color: var(--gold);
+}
+
+.checkout__row {
+  display: grid;
+  grid-template-columns: 1.4fr 0.8fr 0.8fr;
+  gap: 14px;
+}
+
+.checkout__box {
+  margin: 0 0 14px;
+  padding: 16px 16px 4px;
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--gold);
+}
+
+.checkout__box legend {
+  padding: 0 6px;
+  font-family: var(--font-display-bold);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.checkout-note {
+  margin: 0 0 12px;
+  color: var(--muted);
+  font-size: 14px;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.order-number {
+  margin: 8px 0 10px;
+  font-family: var(--font-display-bold);
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+/* Account hub. The four links match the account menu. They do not open separate pages yet. */
+.account-menu {
+  margin: 28px 0 48px;
+  padding: 0;
+  list-style: none;
+}
+
+.account-menu a {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 0;
+  color: var(--ink);
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.account-menu .icon {
+  width: 26px;
+  height: 26px;
+  color: var(--muted);
+}
+
+.account-menu a:hover {
+  color: var(--gold-deep);
+}
+
 .product-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -1467,5 +1647,11 @@ button:focus-visible {
 
   .bulk-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .checkout__row,
+  .steps {
+    grid-template-columns: 1fr;
+    flex-direction: column;
   }
 }

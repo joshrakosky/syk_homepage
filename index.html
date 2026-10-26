@@ -13,11 +13,11 @@
   Apparel & Uniforms apparel.html
   Headwear /headwear
   Bags & Coolers /bags-coolers
-  Premium Brands /premium-brands
   Marketing & Promo /marketing
   Print Center /print-center
   Trade Shows /trade-shows
   Quick Turn /quick-turn
+  Premium Brands /premium-brands
   About Us /about
   Footer links follow the same pattern.
 
@@ -118,7 +118,9 @@
         <li><img src="assets/images/logos/Cuisinart.png" alt="Cuisinart"></li>
         <li><img src="assets/images/logos/CutterBuck.png" alt="Cutter Buck"></li>
         <li><img src="assets/images/logos/EddieBauer.png" alt="Eddie Bauer"></li>
+        <li><img src="assets/images/logos/FIGS.png" alt="FIGS"></li>
         <li><img src="assets/images/logos/FootJoy.png" alt="Foot Joy"></li>
+        <li><img src="assets/images/logos/FrostBuddy.png" alt="Frost Buddy"></li>
         <li><img src="assets/images/logos/HighSierra.png" alt="High Sierra"></li>
         <li><img src="assets/images/logos/HydroFlask.png" alt="Hydro Flask"></li>
         <li><img src="assets/images/logos/Igloo.png" alt="Igloo"></li>
@@ -169,7 +171,9 @@
         <li><img src="assets/images/logos/Cuisinart.png" alt="Cuisinart"></li>
         <li><img src="assets/images/logos/CutterBuck.png" alt="Cutter Buck"></li>
         <li><img src="assets/images/logos/EddieBauer.png" alt="Eddie Bauer"></li>
+        <li><img src="assets/images/logos/FIGS.png" alt="FIGS"></li>
         <li><img src="assets/images/logos/FootJoy.png" alt="Foot Joy"></li>
+        <li><img src="assets/images/logos/FrostBuddy.png" alt="Frost Buddy"></li>
         <li><img src="assets/images/logos/HighSierra.png" alt="High Sierra"></li>
         <li><img src="assets/images/logos/HydroFlask.png" alt="Hydro Flask"></li>
         <li><img src="assets/images/logos/Igloo.png" alt="Igloo"></li>
@@ -221,11 +225,9 @@
       </form>
 
       <div class="header-tools">
-        <!-- Account menu is not part of this example. -->
-        <a href="#">
+        <a href="account.html">
           <svg class="icon" aria-hidden="true"><use href="#i-user"></use></svg>
           My Account
-          <svg class="icon icon-chevron" aria-hidden="true"><use href="#i-chevron-down"></use></svg>
         </a>
         <a class="cart-link" href="checkout.html">
           <svg class="icon" aria-hidden="true"><use href="#i-cart"></use></svg>
@@ -241,12 +243,13 @@
       <ul class="nav-list">
         <li class="has-menu">
           <a href="apparel.html" aria-haspopup="true">Apparel &amp; Uniforms <svg class="icon icon-chevron" aria-hidden="true"><use href="#i-chevron-down"></use></svg></a>
-          <!-- Hover opens this panel. Men's, Women's, and By Look fly out to the right. -->
+          <!-- Hover opens this panel. Men's, Women's, and Premium Brands fly out to the right. -->
           <ul class="menu">
             <li class="has-flyout">
               <a href="#" aria-haspopup="true">Men's <svg class="icon" aria-hidden="true"><use href="#i-chevron"></use></svg></a>
               <ul class="flyout">
                 <li><a href="#">Polos</a></li>
+                <li><a href="#">Scrubs</a></li>
                 <li><a href="#">Casual</a></li>
                 <li><a href="#">Pullovers</a></li>
                 <li><a href="#">Dress Shirts</a></li>
@@ -257,29 +260,59 @@
               <a href="#" aria-haspopup="true">Women's <svg class="icon" aria-hidden="true"><use href="#i-chevron"></use></svg></a>
               <ul class="flyout">
                 <li><a href="#">Polos</a></li>
+                <li><a href="#">Scrubs</a></li>
                 <li><a href="#">Casual</a></li>
                 <li><a href="#">Pullovers</a></li>
                 <li><a href="#">Dress Shirts</a></li>
                 <li><a href="#">Outerwear</a></li>
               </ul>
             </li>
+            <li><a href="#">Workwear</a></li>
+            <li><a href="#">Accessories</a></li>
             <li class="has-flyout">
-              <a href="#" aria-haspopup="true">By Look <svg class="icon" aria-hidden="true"><use href="#i-chevron"></use></svg></a>
+              <a href="#" aria-haspopup="true">Premium Brands <svg class="icon" aria-hidden="true"><use href="#i-chevron"></use></svg></a>
+              <!-- Apparel names taken from the logo carousel. -->
               <ul class="flyout">
-                <li><a href="#">Healthcare</a></li>
-                <li><a href="#">Comp</a></li>
-                <li><a href="#">Conference</a></li>
-                <li><a href="#">Sales</a></li>
-                <li><a href="#">Meeting</a></li>
-                <li><a href="#">Team</a></li>
-                <li><a href="#">Travel</a></li>
+                <li><a href="#">Adidas</a></li>
+                <li><a href="#">Brooks Brothers</a></li>
+                <li><a href="#">Carhartt</a></li>
+                <li><a href="#">Eddie Bauer</a></li>
+                <li><a href="#">FIGS</a></li>
+                <li><a href="#">Nike</a></li>
+                <li><a href="#">The North Face</a></li>
+                <li><a href="#">Travis Mathew</a></li>
+                <li><a href="#">Under Armour</a></li>
+                <li><a href="#">Vineyard Vines</a></li>
               </ul>
             </li>
-            <li><a href="#">Premium Brands</a></li>
           </ul>
         </li>
-        <li><a href="#">Headwear</a></li>
-        <li><a href="#">Bags &amp; Coolers</a></li>
+        <li class="has-menu">
+          <a href="#" aria-haspopup="true">Headwear <svg class="icon icon-chevron" aria-hidden="true"><use href="#i-chevron-down"></use></svg></a>
+          <ul class="menu">
+            <li><a href="#">Structured</a></li>
+            <li><a href="#">Unstructured</a></li>
+            <li><a href="#">Snapback</a></li>
+            <li><a href="#">Trucker Cap</a></li>
+            <li><a href="#">Bucket Cap</a></li>
+            <li><a href="#">Beanie</a></li>
+            <li><a href="#">Visor</a></li>
+          </ul>
+        </li>
+        <li class="has-menu">
+          <a href="#" aria-haspopup="true">Bags &amp; Coolers <svg class="icon icon-chevron" aria-hidden="true"><use href="#i-chevron-down"></use></svg></a>
+          <ul class="menu">
+            <li><a href="#">6-Can Cooler</a></li>
+            <li><a href="#">12-Can Cooler</a></li>
+            <li><a href="#">18-Can Cooler</a></li>
+            <li><a href="#">24-Can Cooler</a></li>
+            <li><a href="#">36-Can Cooler</a></li>
+            <li><a href="#">Messenger Bag</a></li>
+            <li><a href="#">Backpack</a></li>
+            <li><a href="#">Tote</a></li>
+            <li><a href="#">Duffle</a></li>
+          </ul>
+        </li>
         <li class="has-menu">
           <a href="#" aria-haspopup="true">Marketing &amp; Promo <svg class="icon icon-chevron" aria-hidden="true"><use href="#i-chevron-down"></use></svg></a>
           <!-- Single-level panel. No flyouts. -->
@@ -288,6 +321,9 @@
             <li><a href="#">Outdoor and Leisure</a></li>
             <li><a href="#">Electronics</a></li>
             <li><a href="#">Travel Essentials</a></li>
+            <li><a href="#">Desk &amp; Office</a></li>
+            <li><a href="#">Awards</a></li>
+            <li><a href="#">Eco-Friendly</a></li>
             <li><a href="#">Quick Turn</a></li>
           </ul>
         </li>
@@ -301,15 +337,19 @@
             <li><a href="#">Postcards</a></li>
             <li><a href="#">Envelopes</a></li>
             <li><a href="#">Pads</a></li>
+            <li><a href="#">Labels</a></li>
           </ul>
         </li>
         <li class="has-menu">
           <a href="#" aria-haspopup="true">Trade Shows <svg class="icon icon-chevron" aria-hidden="true"><use href="#i-chevron-down"></use></svg></a>
           <ul class="menu">
             <li><a href="#">Table Covers</a></li>
+            <li><a href="#">Table Runners</a></li>
             <li><a href="#">Retractable Banners</a></li>
             <li><a href="#">Backdrops</a></li>
             <li><a href="#">Vinyl Banners</a></li>
+            <li><a href="#">Feather Flags</a></li>
+            <li><a href="#">Literature Racks</a></li>
             <li><a href="#">Lighting</a></li>
           </ul>
         </li>
@@ -356,13 +396,6 @@
 
           <a class="category-card" href="#">
             <div class="category-card__photo">
-              <img src="assets/images/categories/premium-brands.jpg" alt="Jacket, metal tumbler, and leather notebook">
-            </div>
-            <span class="category-card__label">Premium Brands <svg class="icon" aria-hidden="true"><use href="#i-chevron"></use></svg></span>
-          </a>
-
-          <a class="category-card" href="#">
-            <div class="category-card__photo">
               <img src="assets/images/categories/marketing.jpg" alt="Black tumbler, backpack, and gift boxes">
             </div>
             <span class="category-card__label">Marketing &amp; Promo <svg class="icon" aria-hidden="true"><use href="#i-chevron"></use></svg></span>
@@ -387,6 +420,13 @@
               <img src="assets/images/categories/quick-turn.jpg" alt="Notebook, water bottle, and folded shirt">
             </div>
             <span class="category-card__label">Quick Turn <svg class="icon" aria-hidden="true"><use href="#i-chevron"></use></svg></span>
+          </a>
+
+          <a class="category-card" href="#">
+            <div class="category-card__photo">
+              <img src="assets/images/categories/premium-brands.jpg" alt="Jacket, metal tumbler, and leather notebook">
+            </div>
+            <span class="category-card__label">Premium Brands <svg class="icon" aria-hidden="true"><use href="#i-chevron"></use></svg></span>
           </a>
         </div>
       </section>
@@ -424,12 +464,11 @@
 
   <footer class="site-footer">
     <ul class="footer-nav">
-      <li><a href="#">Product Database</a></li>
+      <li><a href="https://www.metroprintedproducts.com" target="_blank" rel="noopener noreferrer">Product Database</a></li>
       <li><a href="#" data-about="faqs">FAQs</a></li>
       <li><a href="#" data-about="contact">Contact Us</a></li>
       <li><a href="#" data-about="shipping">Shipping Information</a></li>
       <li><a href="#" data-about="policy">Return Policy</a></li>
-      <li><a href="#">Brands We Offer</a></li>
     </ul>
     <hr class="footer-rule">
     <div class="fine-print">
@@ -466,7 +505,7 @@
       </div>
 
       <label>Scope of work
-        <textarea name="scope" rows="5" required placeholder="Quantities, products, branding, and anything the team should know."></textarea>
+        <textarea name="scope" rows="5" required placeholder="Quantities, products, branding, budget, shipping, and anything the team should know."></textarea>
       </label>
       <label>In-hands date
         <input type="date" name="in-hands" required>
@@ -477,6 +516,22 @@
         <button type="submit" class="btn" value="submit">Submit request</button>
       </div>
     </form>
+  </dialog>
+
+  <!-- Visual confirmation only. The form does not send the request. -->
+  <dialog class="modal" id="project-sent" aria-labelledby="project-sent-title">
+    <div class="modal__panel">
+      <div class="modal__head">
+        <h2 id="project-sent-title">Request received</h2>
+        <button type="button" class="modal__close" data-close-sent aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <p class="modal__lead">A rep will contact you within 30 minutes. If you have any questions, please reach out to <a href="mailto:metroinfo@proforma.com">metroinfo@proforma.com</a>.</p>
+      <div class="modal__actions">
+        <button type="button" class="btn" data-close-sent>Close</button>
+      </div>
+    </div>
   </dialog>
 
   <!-- About Us. Example copy for the layout. The same dialog opens from the hero and the matching footer links. -->
@@ -554,6 +609,18 @@
     projectDialog.querySelectorAll("[data-close]").forEach(function (button) {
       button.addEventListener("click", function () {
         projectDialog.close();
+      });
+    });
+    // A valid submit closes the form and opens the confirmation. Cancel does not.
+    const projectSent = document.getElementById("project-sent");
+    projectDialog.querySelector("form").addEventListener("submit", function (event) {
+      event.preventDefault();
+      projectDialog.close();
+      projectSent.showModal();
+    });
+    projectSent.querySelectorAll("[data-close-sent]").forEach(function (button) {
+      button.addEventListener("click", function () {
+        projectSent.close();
       });
     });
 

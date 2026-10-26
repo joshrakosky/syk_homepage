@@ -42,10 +42,9 @@
         </button>
       </form>
       <div class="header-tools">
-        <a href="#">
+        <a href="account.html">
           <svg class="icon" aria-hidden="true"><use href="#i-user"></use></svg>
           My Account
-          <svg class="icon icon-chevron" aria-hidden="true"><use href="#i-chevron-down"></use></svg>
         </a>
         <a class="cart-link" href="checkout.html">
           <svg class="icon" aria-hidden="true"><use href="#i-cart"></use></svg>
@@ -60,9 +59,45 @@
     <div class="wrap">
       <ul class="nav-list">
         <li><a href="apparel.html">Apparel &amp; Uniforms</a></li>
-        <li><a href="index.html">Headwear</a></li>
-        <li><a href="index.html">Bags &amp; Coolers</a></li>
-        <li><a href="index.html">Marketing &amp; Promo</a></li>
+        <li class="has-menu">
+          <a href="index.html" aria-haspopup="true">Headwear <svg class="icon icon-chevron" aria-hidden="true"><use href="#i-chevron-down"></use></svg></a>
+          <ul class="menu">
+            <li><a href="#">Structured</a></li>
+            <li><a href="#">Unstructured</a></li>
+            <li><a href="#">Snapback</a></li>
+            <li><a href="#">Trucker Cap</a></li>
+            <li><a href="#">Bucket Cap</a></li>
+            <li><a href="#">Beanie</a></li>
+            <li><a href="#">Visor</a></li>
+          </ul>
+        </li>
+        <li class="has-menu">
+          <a href="index.html" aria-haspopup="true">Bags &amp; Coolers <svg class="icon icon-chevron" aria-hidden="true"><use href="#i-chevron-down"></use></svg></a>
+          <ul class="menu">
+            <li><a href="#">6-Can Cooler</a></li>
+            <li><a href="#">12-Can Cooler</a></li>
+            <li><a href="#">18-Can Cooler</a></li>
+            <li><a href="#">24-Can Cooler</a></li>
+            <li><a href="#">36-Can Cooler</a></li>
+            <li><a href="#">Messenger Bag</a></li>
+            <li><a href="#">Backpack</a></li>
+            <li><a href="#">Tote</a></li>
+            <li><a href="#">Duffle</a></li>
+          </ul>
+        </li>
+        <li class="has-menu">
+          <a href="index.html" aria-haspopup="true">Marketing &amp; Promo <svg class="icon icon-chevron" aria-hidden="true"><use href="#i-chevron-down"></use></svg></a>
+          <ul class="menu">
+            <li><a href="#">Drinkware</a></li>
+            <li><a href="#">Outdoor and Leisure</a></li>
+            <li><a href="#">Electronics</a></li>
+            <li><a href="#">Travel Essentials</a></li>
+            <li><a href="#">Desk &amp; Office</a></li>
+            <li><a href="#">Awards</a></li>
+            <li><a href="#">Eco-Friendly</a></li>
+            <li><a href="#">Quick Turn</a></li>
+          </ul>
+        </li>
         <li><a href="index.html">Print Center</a></li>
         <li><a href="index.html">Trade Shows</a></li>
       </ul>
@@ -73,19 +108,135 @@
     <div class="wrap page-body">
       <p class="crumb"><a href="index.html">Home</a> / Checkout</p>
       <h1 class="page-title">Checkout</h1>
+
+      <!-- Three steps. The current one is marked in checkout.js. -->
+      <ol class="steps" id="steps" hidden>
+        <li data-step="cart">1. Cart</li>
+        <li data-step="ship">2. Address &amp; shipping</li>
+        <li data-step="pay">3. Payment</li>
+      </ol>
+
       <p class="page-lead" id="cart-empty" hidden>Your cart is empty. <a href="apparel.html">Continue shopping</a>.</p>
-      <div id="cart-summary" hidden>
-        <p class="page-lead">Review the test cart. Nothing is charged.</p>
+      <p class="page-lead" id="order-done" hidden></p>
+
+      <section id="step-cart" hidden>
+        <p class="page-lead">Review the cart. Change a quantity or remove a line before you continue.</p>
         <ul class="cart-list" id="cart-list"></ul>
         <p class="cart-total"><span>Total</span><span id="cart-total"></span></p>
         <div class="added__actions">
-          <button type="button" class="btn" id="place-order">Place order</button>
+          <button type="button" class="btn" id="to-ship">Continue</button>
           <a class="btn btn--line" href="apparel.html">Continue Shopping</a>
         </div>
-      </div>
-      <p class="page-lead" id="order-note" hidden>This is a visual checkout. No order was sent.</p>
+      </section>
+
+      <section class="checkout" id="step-ship" hidden>
+        <form id="ship-form">
+          <label>Address
+            <!-- Stand-in saved addresses. Add new reveals the fields below. -->
+            <select id="address" name="address">
+              <option value="">Choose an address</option>
+              <option value="clinic">Clinic — 123 Medical Center Dr, Kalamazoo, MI 49007</option>
+              <option value="warehouse">Warehouse — 456 Distribution Way, Portage, MI 49002</option>
+              <option value="new">Add a new address</option>
+            </select>
+          </label>
+          <div class="checkout__new" id="new-address" hidden>
+            <label>Full name
+              <input type="text" id="addr-name" name="addr-name" autocomplete="name">
+            </label>
+            <label>Street
+              <input type="text" id="addr-street" name="addr-street" autocomplete="address-line1">
+            </label>
+            <div class="checkout__row">
+              <label>City
+                <input type="text" id="addr-city" name="addr-city" autocomplete="address-level2">
+              </label>
+              <label>State
+                <input type="text" id="addr-state" name="addr-state" autocomplete="address-level1">
+              </label>
+              <label>ZIP
+                <input type="text" id="addr-zip" name="addr-zip" autocomplete="postal-code">
+              </label>
+            </div>
+          </div>
+
+          <label>Shipping
+            <select id="shipping" name="shipping">
+              <option value="">Choose a method</option>
+              <option value="ground">UPS Ground</option>
+              <option value="2da">UPS 2nd Day Air</option>
+              <option value="nda">UPS Next Day Air</option>
+              <option value="third">3rd party</option>
+            </select>
+          </label>
+
+          <!-- Required only when 3rd party is selected. Not checked against a carrier account. -->
+          <fieldset class="checkout__box" id="third-party" hidden>
+            <legend>3rd party billing</legend>
+            <label>Carrier
+              <select id="third-carrier" name="third-carrier">
+                <option value="">UPS or FedEx</option>
+                <option value="UPS">UPS</option>
+                <option value="FedEx">FedEx</option>
+              </select>
+            </label>
+            <label>Shipper number
+              <input type="text" id="shipper" name="shipper" autocomplete="off" spellcheck="false">
+            </label>
+            <p class="checkout-note">The standard rate will apply if there is an issue with the shipper number.</p>
+          </fieldset>
+
+          <p class="form-note" id="ship-note" role="status"></p>
+          <div class="added__actions">
+            <button type="button" class="btn btn--line" id="back-cart">Back</button>
+            <button type="submit" class="btn">Continue</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="checkout" id="step-pay" hidden>
+        <form id="pay-form">
+          <p class="page-lead">Visual checkout. No payment is sent.</p>
+          <label>Name on card
+            <input type="text" id="pay-name" name="pay-name" autocomplete="cc-name">
+          </label>
+          <label>Card number
+            <input type="text" id="pay-card" name="pay-card" inputmode="numeric" autocomplete="cc-number">
+          </label>
+          <div class="checkout__row">
+            <label>Expiration
+              <input type="text" id="pay-exp" name="pay-exp" placeholder="MM/YY" autocomplete="cc-exp">
+            </label>
+            <label>Security code
+              <input type="text" id="pay-cvc" name="pay-cvc" inputmode="numeric" autocomplete="cc-csc">
+            </label>
+          </div>
+          <p class="form-note" id="pay-note" role="status"></p>
+          <div class="added__actions">
+            <button type="button" class="btn btn--line" id="back-ship">Back</button>
+            <button type="submit" class="btn">Submit order</button>
+          </div>
+        </form>
+      </section>
     </div>
   </main>
+
+  <!-- Shown after payment submit. The number is filled in by checkout.js. -->
+  <dialog class="modal" id="order-sent" aria-labelledby="order-title">
+    <div class="modal__panel">
+      <div class="modal__head">
+        <h2 id="order-title">Order received</h2>
+        <button type="button" class="modal__close" data-close-order aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <p class="order-number" id="order-number">SYK-123</p>
+      <p class="modal__lead">Your order has been received. This is a visual checkout. No payment was sent.</p>
+      <div class="modal__actions">
+        <button type="button" class="btn" data-close-order>Close</button>
+      </div>
+    </div>
+  </dialog>
 
   <footer class="site-footer">
     <div class="fine-print">
