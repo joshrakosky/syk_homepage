@@ -918,9 +918,29 @@ button.btn {
   line-height: 1.5;
 }
 
-.about-panel ul {
+.about-panel ul,
+.about-panel ol {
   margin: 0;
   padding-left: 18px;
+}
+
+.about-faq {
+  list-style: none;
+  padding-left: 0;
+}
+
+.about-faq li {
+  margin-bottom: 14px;
+}
+
+.about-faq strong {
+  font-family: var(--font-display-bold);
+  font-weight: 700;
+}
+
+.about-panel a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
 
 /* Catalog pages. Test cart lives in sessionStorage. See js/store.js. */
